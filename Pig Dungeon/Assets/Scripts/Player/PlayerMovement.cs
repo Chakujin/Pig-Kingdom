@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private float f_currentTime;
+
     public CharacterController2D controller;
     private float f_horizontalMove = 0f;
     public float runspeed;
@@ -12,6 +14,14 @@ public class PlayerMovement : MonoBehaviour
     private bool b_crouch;
 
     public Animator playerAnimator;
+
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    private int attackDamage = 10;
+    public LayerMask enemyLayer;
+    private float F_timeAttack = 1f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +31,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        f_currentTime += Time.deltaTime;
         //Movement
         f_horizontalMove = Input.GetAxisRaw("Horizontal") * runspeed;
 
         if (Input.GetButtonDown("Jump"))
         {
             b_jump = true;
+            playerAnimator.SetBool("IsJumping", true);
         }
         if (Input.GetButtonDown("Crouch"))
         {
@@ -34,6 +46,16 @@ public class PlayerMovement : MonoBehaviour
         }else if (Input.GetButtonUp("Crouch"))
         {
             b_crouch = false;
+        }
+
+        //Attack
+        if (Input.GetMouseButtonDown(0))
+        {
+            if(f_currentTime >= F_timeAttack)
+            {
+                Attack();
+                f_currentTime = 0f;
+            }
         }
 
         //Animations
@@ -47,4 +69,32 @@ public class PlayerMovement : MonoBehaviour
         b_jump = false;
     }
 
+    public void Attack()
+    {
+        playerAnimator.SetTrigger("Attack");
+        Collider2D[] hitEnemyes = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+        foreach (Collider2D enemy in hitEnemyes)
+        {
+            enemy.GetComponent<EnemyPig>().TakeDamage(attackDamage);
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    //Animators
+    public void OnLanding()
+    {
+        playerAnimator.SetBool("IsJumping", false);
+    }
+    public void OnCrouching(bool isCrouching)
+    {
+        playerAnimator.SetBool("IsCrouching", isCrouching);
+    }
 }
