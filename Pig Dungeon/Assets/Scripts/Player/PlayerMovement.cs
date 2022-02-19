@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool b_jump;
     private bool b_crouch;
+
+    public Animator playerAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
         {
             b_crouch = false;
         }
+
+        //Animations
+        playerAnimator.SetFloat("Speed",Mathf.Abs(f_horizontalMove));
     }
 
     private void FixedUpdate()

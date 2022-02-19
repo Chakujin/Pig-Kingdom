@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6387264096553626763}
   - component: {fileID: 4887111368147447146}
+  - component: {fileID: 2115833952}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -82,6 +83,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2115833952
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202098759063259090}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd1389dbc00684d3f83940bfeb50aa51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4697547525428430826
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec96406ea49a247ddb577bcf1ea3df15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 700
+  m_JumpForce: 500
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -222,6 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 4540000308494218200}
   runspeed: 40
+  playerAnimator: {fileID: 2115833952}
 --- !u!50 &578770668088433481
 Rigidbody2D:
   serializedVersion: 4
