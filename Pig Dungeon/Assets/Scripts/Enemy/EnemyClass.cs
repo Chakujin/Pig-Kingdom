@@ -7,10 +7,13 @@ public class EnemyClass : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
     public Animator EnemyAnimator;
+    //public Rigidbody2D myRb;
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
+        //myRb.AddForce(new Vector2 (1,1));
 
         EnemyAnimator.SetTrigger("Hurt");
 

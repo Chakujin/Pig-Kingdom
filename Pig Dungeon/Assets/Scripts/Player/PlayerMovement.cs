@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask enemyLayer;
     private float F_timeAttack = 0.7f;
 
+    public int currentHealth = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
         //Attack
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("pasa");
             if (f_currentTime >= F_timeAttack)
             {
                 f_currentTime = 0f;
@@ -82,12 +82,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
+    public void TakeDamage(int damage)
     {
-        if (attackPoint == null)
-            return;
-
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        currentHealth -= damage;
+        Debug.Log("Player take damage");
     }
 
     //Animators
@@ -98,5 +96,14 @@ public class PlayerMovement : MonoBehaviour
     public void OnCrouching(bool isCrouching)
     {
         playerAnimator.SetBool("IsCrouching", isCrouching);
+    }
+
+    //Draw Gizmos
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
