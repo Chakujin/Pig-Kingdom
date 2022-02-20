@@ -148,7 +148,6 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 20
   EnemyAnimator: {fileID: 3660642899922927925}
-  mySprite: {fileID: 1663450985785887637}
 --- !u!95 &3660642899922927925
 Animator:
   serializedVersion: 3

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyPig : EnemyClass
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,6 @@ public class EnemyPig : EnemyClass
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
 }

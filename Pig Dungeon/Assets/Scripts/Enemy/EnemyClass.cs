@@ -7,7 +7,6 @@ public class EnemyClass : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
     public Animator EnemyAnimator;
-    public SpriteRenderer mySprite;
 
     public void TakeDamage(int damage)
     {
@@ -18,22 +17,19 @@ public class EnemyClass : MonoBehaviour
         if (currentHealth <= 0)
         {
             Dead();
-
         }
     }
     public void Dead()
     {
         StartCoroutine(Die());
 
-        EnemyAnimator.SetBool("Dead", true);
-        //GetComponent<Collider2D>().enabled = false;
+        EnemyAnimator.SetBool("IsDead", true);
+        GetComponent<Collider2D>().enabled = false;
     }
 
     public IEnumerator Die()
     {
-        yield return new WaitForSeconds(0.2f);
-        mySprite.enabled = false;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(3f);
         Destroy(this.gameObject);
     }
 }

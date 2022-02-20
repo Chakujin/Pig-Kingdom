@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public float attackRange = 0.5f;
     private int attackDamage = 10;
     public LayerMask enemyLayer;
-    private float F_timeAttack = 1f;
+    private float F_timeAttack = 0.7f;
 
 
     // Start is called before the first frame update
@@ -51,10 +51,11 @@ public class PlayerMovement : MonoBehaviour
         //Attack
         if (Input.GetMouseButtonDown(0))
         {
-            if(f_currentTime >= F_timeAttack)
+            Debug.Log("pasa");
+            if (f_currentTime >= F_timeAttack)
             {
-                Attack();
                 f_currentTime = 0f;
+                Attack();
             }
         }
 
@@ -77,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
         foreach (Collider2D enemy in hitEnemyes)
         {
             enemy.GetComponent<EnemyPig>().TakeDamage(attackDamage);
+            Debug.Log("hited");
         }
     }
 
