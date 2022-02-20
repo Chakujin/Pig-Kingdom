@@ -21,12 +21,13 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask enemyLayer;
     private float F_timeAttack = 0.7f;
 
-    public int currentHealth = 3;
+    public int currentHealth;
+    public int maxHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -78,13 +79,20 @@ public class PlayerMovement : MonoBehaviour
         foreach (Collider2D enemy in hitEnemyes)
         {
             enemy.GetComponent<EnemyPig>().TakeDamage(attackDamage);
-            Debug.Log("hited");
+            Debug.Log("hited Enemy");
         }
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        playerAnimator.SetTrigger("isHited");
+
+        if (currentHealth >= 0)
+        {
+            //Make Die
+        }
+
         Debug.Log("Player take damage");
     }
 

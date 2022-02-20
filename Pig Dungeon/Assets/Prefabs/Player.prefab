@@ -307,7 +307,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  currentHealth: 3
+  currentHealth: 0
+  maxHealth: 3
 --- !u!50 &578770668088433481
 Rigidbody2D:
   serializedVersion: 4
