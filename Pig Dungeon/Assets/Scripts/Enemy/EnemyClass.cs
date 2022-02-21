@@ -6,6 +6,7 @@ public class EnemyClass : MonoBehaviour
 {
     public int currentHealth;
     public int maxHealth;
+    public bool die = false;
     public Animator EnemyAnimator;
     //public Rigidbody2D myRb;
 
@@ -28,6 +29,7 @@ public class EnemyClass : MonoBehaviour
 
         EnemyAnimator.SetBool("IsDead", true);
         GetComponent<Collider2D>().enabled = false;
+        die = true;
     }
 
     public IEnumerator Die()

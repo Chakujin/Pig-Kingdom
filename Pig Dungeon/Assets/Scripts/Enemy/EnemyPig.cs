@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class EnemyPig : EnemyClass
 {
+    public SpriteRenderer mySprite;
     public float speed;
     public float detectRange;
     public LayerMask playerLayer;
     private bool b_startAttack = false;
 
     public Transform detectedPoint;
+    public Transform detectRigth;
+    public Transform detectLeft;
     public Transform[] PointMove;
+
     private int i_currentPoint;
     private Vector2 v_moveDirection;
-
     private bool b_move = true;
-    public SpriteRenderer mySprite;
+
+    [SerializeField]private Vector2 sizeDetectors;
 
     // Start is called before the first frame update
     void Start()
@@ -46,11 +50,12 @@ public class EnemyPig : EnemyClass
             else if (v_moveDirection.x - transform.position.x > transform.position.x)
             {
                 mySprite.flipX = true;
+                //detectRigth.position = new Vector2(detectRigth.position.x + 0.2f, detectRigth.position.y);
                 //Debug.Log("Derecha");
             }  
         }
 
-        if(currentHealth <= 0)
+        if(die == true)
         {
             b_move = false;
         }
@@ -59,15 +64,35 @@ public class EnemyPig : EnemyClass
     private void FixedUpdate()
     {
         Collider2D[] hitEnemyes = Physics2D.OverlapCircleAll(detectedPoint.position, detectRange, playerLayer);
+        Collider2D[] detectRigthPlayer = Physics2D.OverlapBoxAll(detectRigth.position, sizeDetectors, 0, playerLayer);
+        Collider2D[] detectLeftPlayer = Physics2D.OverlapBoxAll(detectLeft.position, sizeDetectors, 0, playerLayer);
 
-        if (b_startAttack == false) {
-            //Detect Player
-            foreach (Collider2D player in hitEnemyes)
+        if (b_startAttack == false && die == false ) {
+
+            foreach(Collider2D playerRigth in detectRigthPlayer)
             {
-                StartCoroutine(startAttack(player));
-                Debug.Log("Detected Player");
-                b_startAttack = true;
-                b_move = false;
+                //Detect Player
+                foreach (Collider2D player in hitEnemyes)
+                {
+                    StartCoroutine(startAttack(player));
+                    Debug.Log("Detected Player Rigth");
+                    b_startAttack = true;
+                    mySprite.flipX = false;
+                    b_move = false;
+                }
+            }
+
+            foreach (Collider2D playerLeft in detectLeftPlayer)
+            {
+                //Detect Player
+                foreach (Collider2D player in hitEnemyes)
+                {
+                    StartCoroutine(startAttack(player));
+                    Debug.Log("Detected Player Left");
+                    b_startAttack = true;
+                    mySprite.flipX = true;
+                    b_move = false;
+                }
             }
         }
     }
