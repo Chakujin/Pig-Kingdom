@@ -179,11 +179,13 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 20
   EnemyAnimator: {fileID: 3660642899922927925}
+  speed: 1
   detectRange: 0.4
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
   detectedPoint: {fileID: 6437624796652201083}
+  PointMove: []
 --- !u!95 &3660642899922927925
 Animator:
   serializedVersion: 3
