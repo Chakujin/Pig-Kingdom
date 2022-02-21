@@ -7,21 +7,15 @@ public class EnemyClass : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
     public bool die = false;
+    public bool move = true;
     public Animator EnemyAnimator;
     //public Rigidbody2D myRb;
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        StartCoroutine(PigDamage());
 
-        //myRb.AddForce(new Vector2 (1,1));
-
-        EnemyAnimator.SetTrigger("Hurt");
-
-        if (currentHealth <= 0)
-        {
-            Dead();
-        }
     }
     public void Dead()
     {
@@ -32,6 +26,19 @@ public class EnemyClass : MonoBehaviour
         die = true;
     }
 
+    public IEnumerator PigDamage()
+    {
+        move = false;
+        EnemyAnimator.SetBool("Move", false);
+        EnemyAnimator.SetTrigger("Hurt");
+
+        if (currentHealth <= 0)
+        {
+            Dead();
+        }
+        yield return new WaitForSeconds(2f);
+        move = true;
+    }
     public IEnumerator Die()
     {
         yield return new WaitForSeconds(3f);

@@ -17,7 +17,6 @@ public class EnemyPig : EnemyClass
 
     private int i_currentPoint;
     private Vector2 v_moveDirection;
-    private bool b_move = true;
 
     [SerializeField]private Vector2 sizeDetectors;
 
@@ -31,14 +30,16 @@ public class EnemyPig : EnemyClass
     void Update()
     {
         //Move and Detect
-        if (Vector2.Distance(transform.position, PointMove[i_currentPoint].transform.position) < 0.1  && b_startAttack == false)
+        if (Vector2.Distance(transform.position, PointMove[i_currentPoint].transform.position) < 0.1  && b_startAttack == false) //Change Point Move
         {
+            EnemyAnimator.SetBool("Move",false);
             i_currentPoint++;
             i_currentPoint %= PointMove.Length;
             StartCoroutine(StopMove());
         }
-        else if (b_move == true && b_startAttack == false) // Move character
+        else if (move == true && b_startAttack == false) // Move character
         {
+            EnemyAnimator.SetBool("Move", true);
             v_moveDirection = transform.position + PointMove[i_currentPoint].position;
             transform.position = Vector2.MoveTowards(transform.position, PointMove[i_currentPoint].transform.position, Time.deltaTime * speed);
             
@@ -57,7 +58,7 @@ public class EnemyPig : EnemyClass
 
         if(die == true)
         {
-            b_move = false;
+            move = false;
         }
     }
 
@@ -71,27 +72,25 @@ public class EnemyPig : EnemyClass
 
             foreach(Collider2D playerRigth in detectRigthPlayer)
             {
-                //Detect Player
+                //Detect Player Rigth
                 foreach (Collider2D player in hitEnemyes)
                 {
                     StartCoroutine(startAttack(player));
-                    Debug.Log("Detected Player Rigth");
                     b_startAttack = true;
                     mySprite.flipX = false;
-                    b_move = false;
+                    move = false;
                 }
             }
 
             foreach (Collider2D playerLeft in detectLeftPlayer)
             {
-                //Detect Player
+                //Detect Player Left
                 foreach (Collider2D player in hitEnemyes)
                 {
                     StartCoroutine(startAttack(player));
-                    Debug.Log("Detected Player Left");
                     b_startAttack = true;
                     mySprite.flipX = true;
-                    b_move = false;
+                    move = false;
                 }
             }
         }
@@ -100,20 +99,21 @@ public class EnemyPig : EnemyClass
     private IEnumerator startAttack( Collider2D playerDetected)
     {
         EnemyAnimator.SetTrigger("Attack");
+        EnemyAnimator.SetBool("Move",false);
         playerDetected.GetComponentInParent<PlayerMovement>().TakeDamage(1);
 
         //playerDetected.GetComponent<Rigidbody2D>().AddForce(new Vector2(1,1));
 
         yield return new WaitForSeconds(2f);
         b_startAttack = false;
-        b_move = true;
+        move = true;
     }
 
     private IEnumerator StopMove()
     {
-        b_move = false;
+        move = false;
         yield return new WaitForSeconds(1f);
-        b_move = true;
+        move = true;
     }
     private void OnDrawGizmosSelected()
     {
