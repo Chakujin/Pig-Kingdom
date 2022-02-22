@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -27,8 +28,13 @@ public class PlayerMovement : MonoBehaviour
 
     public int currentHealth;
     public int maxHealth;
+
     [SerializeField]private bool b_isRigth;
     [SerializeField]private bool b_isLeft;
+
+    //Door
+    public bool doorGo = false;
+    private bool UsingDoor = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,29 +46,43 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         f_currentTime += Time.deltaTime;
+
         //Movement
-        f_horizontalMove = Input.GetAxisRaw("Horizontal") * runspeed;
+        if (UsingDoor == false) {
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            b_jump = true;
-            playerAnimator.SetBool("IsJumping", true);
-        }
-        if (Input.GetButtonDown("Crouch"))
-        {
-            b_crouch = true;
-        }else if (Input.GetButtonUp("Crouch"))
-        {
-            b_crouch = false;
-        }
+            f_horizontalMove = Input.GetAxisRaw("Horizontal") * runspeed;
 
-        //Attack
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (f_currentTime >= F_timeAttack)
+            if (Input.GetButtonDown("Jump"))
             {
-                f_currentTime = 0f;
-                Attack();
+                b_jump = true;
+                playerAnimator.SetBool("IsJumping", true);
+            }
+            if (Input.GetButtonDown("Crouch"))
+            {
+                b_crouch = true;
+            }
+            else if (Input.GetButtonUp("Crouch"))
+            {
+                b_crouch = false;
+            }
+
+            //Attack
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (f_currentTime >= F_timeAttack)
+                {
+                    f_currentTime = 0f;
+                    Attack();
+                }
+            }
+        }
+        //Door
+        if(doorGo == true)
+        {
+            if (Input.GetKeyDown(KeyCode.F) && UsingDoor == false)
+            {
+                StartCoroutine(OpenDoor());
+                UsingDoor = true;
             }
         }
 
@@ -90,6 +110,8 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(f_horizontalMove * Time.fixedDeltaTime, b_crouch, b_jump);
         b_jump = false;
     }
+
+    #region ATTACKS
 
     public void Attack()
     {
@@ -120,7 +142,8 @@ public class PlayerMovement : MonoBehaviour
             //Make Die
         }
     }
-
+    #endregion
+    #region ANIMATIONS
     //Animators
     public void OnLanding()
     {
@@ -130,6 +153,18 @@ public class PlayerMovement : MonoBehaviour
     {
         playerAnimator.SetBool("IsCrouching", isCrouching);
     }
+    public void EarlyDoorClose()
+    {
+        Debug.Log("Pase");
+        UsingDoor = false;
+    }
+    private IEnumerator OpenDoor()
+    {
+        playerAnimator.SetBool("GoDoor",true);
+        yield return new WaitForSeconds(3f);
+    }
+
+    #endregion
 
     //Draw Gizmos
     private void OnDrawGizmosSelected()
