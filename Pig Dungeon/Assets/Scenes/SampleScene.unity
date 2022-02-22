@@ -175,12 +175,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3940961653530608886}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &496160671 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1663450985785887637, guid: e06eb520e332241bfb40779bbed25bef,
-    type: 3}
-  m_PrefabInstance: {fileID: 3940961653530608886}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,21 +2435,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1663450985785887637, guid: e06eb520e332241bfb40779bbed25bef,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4641316126223883438, guid: e06eb520e332241bfb40779bbed25bef,
-        type: 3}
-      propertyPath: PointMove.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4641316126223883438, guid: e06eb520e332241bfb40779bbed25bef,
-        type: 3}
-      propertyPath: speed
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4641316126223883438, guid: e06eb520e332241bfb40779bbed25bef,
         type: 3}
       propertyPath: PointMove.Array.data[0]
@@ -2466,11 +2445,6 @@ PrefabInstance:
       propertyPath: PointMove.Array.data[1]
       value: 
       objectReference: {fileID: 1187267310}
-    - target: {fileID: 4641316126223883438, guid: e06eb520e332241bfb40779bbed25bef,
-        type: 3}
-      propertyPath: mySprite
-      value: 
-      objectReference: {fileID: 496160671}
     - target: {fileID: 5259832760905973707, guid: e06eb520e332241bfb40779bbed25bef,
         type: 3}
       propertyPath: m_Name

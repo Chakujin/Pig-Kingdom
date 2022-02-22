@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4956835808247884229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.282, y: -0.178, z: 0}
+  m_LocalPosition: {x: -0.54, y: -0.178, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8594352967298506254}
@@ -210,8 +210,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 20
+  die: 0
+  move: 1
+  detectHitRigth: 0
+  detectHitLeft: 0
   EnemyAnimator: {fileID: 3660642899922927925}
-  mySprite: {fileID: 1663450985785887637}
+  mySpriteRenderer: {fileID: 1663450985785887637}
   speed: 1
   detectRange: 0.4
   playerLayer:
@@ -220,8 +224,10 @@ MonoBehaviour:
   detectedPoint: {fileID: 6437624796652201083}
   detectRigth: {fileID: 3679002449576490998}
   detectLeft: {fileID: 5455431383536485673}
-  PointMove: []
-  sizeDetectors: {x: 0.2, y: 0.5}
+  PointMove:
+  - {fileID: 0}
+  - {fileID: 0}
+  sizeDetectors: {x: 2, y: 0.4}
 --- !u!95 &3660642899922927925
 Animator:
   serializedVersion: 3
@@ -265,7 +271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6002615096548970229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.388, y: -0.157, z: 0}
+  m_LocalPosition: {x: 0.547, y: -0.157, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8594352967298506254}

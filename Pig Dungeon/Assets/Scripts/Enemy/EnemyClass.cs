@@ -6,24 +6,26 @@ public class EnemyClass : MonoBehaviour
 {
     public int currentHealth;
     public int maxHealth;
+
     public bool die = false;
     public bool move = true;
+    public bool detectHitRigth = false;
+    public bool detectHitLeft = false;
+
     public Animator EnemyAnimator;
-    //public Rigidbody2D myRb;
+    public SpriteRenderer mySpriteRenderer;
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         StartCoroutine(PigDamage());
-
     }
     public void Dead()
     {
-        StartCoroutine(Die());
-
         EnemyAnimator.SetBool("IsDead", true);
-        GetComponent<Collider2D>().enabled = false;
         die = true;
+        move = false;
+        StartCoroutine(Die());
     }
 
     public IEnumerator PigDamage()
@@ -31,6 +33,18 @@ public class EnemyClass : MonoBehaviour
         move = false;
         EnemyAnimator.SetBool("Move", false);
         EnemyAnimator.SetTrigger("Hurt");
+
+        //Impulse (Dont Work with AddForce)
+        if (detectHitLeft == true)
+        {
+            mySpriteRenderer.flipX = true;
+            //Debug.Log("ForceLeft");
+        }
+        else if (detectHitRigth == true)
+        {
+            mySpriteRenderer.flipX = false;
+            //Debug.Log("ForceRigth");
+        }
 
         if (currentHealth <= 0)
         {
@@ -41,6 +55,7 @@ public class EnemyClass : MonoBehaviour
     }
     public IEnumerator Die()
     {
+        GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(3f);
         Destroy(this.gameObject);
     }

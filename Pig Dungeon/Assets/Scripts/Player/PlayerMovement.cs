@@ -79,7 +79,6 @@ public class PlayerMovement : MonoBehaviour
         foreach (Collider2D enemy in hitEnemyes)
         {
             enemy.GetComponent<EnemyPig>().TakeDamage(attackDamage);
-            Debug.Log("hited Enemy");
         }
     }
 
@@ -92,8 +91,6 @@ public class PlayerMovement : MonoBehaviour
         {
             //Make Die
         }
-
-        Debug.Log("Player take damage");
     }
 
     //Animators
