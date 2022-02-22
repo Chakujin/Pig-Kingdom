@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyPig : EnemyClass
 {
-    public SpriteRenderer mySprite;
     public float speed;
     public float detectRange;
     public LayerMask playerLayer;
@@ -45,18 +44,16 @@ public class EnemyPig : EnemyClass
             
             if(v_moveDirection.x - transform.position.x < transform.position.x)
             {
-                mySprite.flipX = false;
+                mySpriteRenderer.flipX = false;
                 //Debug.Log("Izquierda");
             }
             else if (v_moveDirection.x - transform.position.x > transform.position.x)
             {
-                mySprite.flipX = true;
-                //detectRigth.position = new Vector2(detectRigth.position.x + 0.2f, detectRigth.position.y);
+                mySpriteRenderer.flipX = true;
                 //Debug.Log("Derecha");
             }  
         }
-
-        if(die == true)
+        if (die == true)
         {
             move = false;
         }
@@ -72,24 +69,28 @@ public class EnemyPig : EnemyClass
 
             foreach(Collider2D playerRigth in detectRigthPlayer)
             {
+                detectHitRigth = true;
+                detectHitLeft = false;
                 //Detect Player Rigth
                 foreach (Collider2D player in hitEnemyes)
                 {
                     StartCoroutine(startAttack(player));
                     b_startAttack = true;
-                    mySprite.flipX = false;
+                    mySpriteRenderer.flipX = false;
                     move = false;
                 }
             }
 
             foreach (Collider2D playerLeft in detectLeftPlayer)
             {
+                detectHitRigth = false;
+                detectHitLeft = true;
                 //Detect Player Left
                 foreach (Collider2D player in hitEnemyes)
                 {
                     StartCoroutine(startAttack(player));
                     b_startAttack = true;
-                    mySprite.flipX = true;
+                    mySpriteRenderer.flipX = true;
                     move = false;
                 }
             }
@@ -102,7 +103,14 @@ public class EnemyPig : EnemyClass
         EnemyAnimator.SetBool("Move",false);
         playerDetected.GetComponentInParent<PlayerMovement>().TakeDamage(1);
 
-        //playerDetected.GetComponent<Rigidbody2D>().AddForce(new Vector2(1,1));
+        if(detectHitLeft == true)
+        {
+            mySpriteRenderer.flipX = false;
+        }
+        else if (detectHitRigth == true)
+        {
+            mySpriteRenderer.flipX = true;
+        }
 
         yield return new WaitForSeconds(2f);
         b_startAttack = false;
