@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
     public Animator playerAnimator;
 
     public Transform attackPoint;
+    public Transform LeftDetector;
+    public Transform RigthDetector;
+    public Vector2 sizeDetectors;
+
     public float attackRange = 0.5f;
     private int attackDamage = 10;
     public LayerMask enemyLayer;
@@ -23,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
     public int currentHealth;
     public int maxHealth;
+    [SerializeField]private bool b_isRigth;
+    [SerializeField]private bool b_isLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +72,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Collider2D[] detectRigthEnemy = Physics2D.OverlapBoxAll(RigthDetector.position, sizeDetectors, 0, enemyLayer);
+        Collider2D[] detectLeftEnemy = Physics2D.OverlapBoxAll(LeftDetector.position, sizeDetectors, 0, enemyLayer);
+
+        foreach (Collider2D detectEnemyRigth in detectRigthEnemy)
+        {
+            b_isRigth = true;
+            b_isLeft = false;
+        }
+        foreach (Collider2D detectEnemyLeft in detectLeftEnemy)
+        {
+            b_isRigth = false;
+            b_isLeft = true;
+        }
+
         //Movement
         controller.Move(f_horizontalMove * Time.fixedDeltaTime, b_crouch, b_jump);
         b_jump = false;
@@ -86,6 +106,14 @@ public class PlayerMovement : MonoBehaviour
     {
         currentHealth -= damage;
         playerAnimator.SetTrigger("isHited");
+
+        if (b_isRigth == true)
+        {
+            controller.m_Rigidbody2D.AddForce(new Vector2(20,5),ForceMode2D.Impulse);
+        }else if (b_isLeft == true)
+        {
+            controller.m_Rigidbody2D.AddForce(new Vector2(transform.position.x,transform.position.y), ForceMode2D.Impulse);
+        }
 
         if (currentHealth >= 0)
         {

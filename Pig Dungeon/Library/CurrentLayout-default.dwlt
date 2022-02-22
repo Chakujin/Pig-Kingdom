@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 0
 --- !u!114 &2
@@ -112,7 +112,7 @@ MonoBehaviour:
     y: 30
     width: 1512
     height: 866
-  m_MinSize: {x: 679, y: 492}
+  m_MinSize: {x: 678, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
   controlID: 21
@@ -137,7 +137,7 @@ MonoBehaviour:
     y: 0
     width: 1085
     height: 866
-  m_MinSize: {x: 403, y: 492}
+  m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
   controlID: 22
@@ -162,8 +162,8 @@ MonoBehaviour:
     y: 0
     width: 1085
     height: 555
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
+  m_MinSize: {x: 402, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
   controlID: 23
 --- !u!114 &8
@@ -185,8 +185,8 @@ MonoBehaviour:
     y: 0
     width: 283
     height: 555
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -211,8 +211,8 @@ MonoBehaviour:
     y: 0
     width: 802
     height: 555
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 333, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 115
+  controlID: 52
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -298,7 +298,7 @@ MonoBehaviour:
   - {fileID: 23}
   - {fileID: 22}
   m_Selected: 2
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_MinSize: {x: 276, y: 292}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 56
+  controlID: 175
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -415,9 +415,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.9404832, y: -1.3660191, z: -208.75058}
+    m_Target: {x: -1.9907303, y: -0.66963035, z: -214.45396}
     speed: 2
-    m_Value: {x: 1.6561389, y: -1.2936946, z: -208.6752}
+    m_Value: {x: -1.9907303, y: -0.66963035, z: -214.45396}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -467,9 +467,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.8583355
+    m_Target: 4.182613
     speed: 2
-    m_Value: 7.3500824
+    m_Value: 4.182613
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -525,7 +525,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 36fbffff5cfbffff9c3a0000b83a0000
+      m_ExpandedIDs: 5efbffff803a0000a83a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -625,7 +625,7 @@ MonoBehaviour:
     - e00: 0.64563334
       e01: 0
       e02: 0
-      e03: -5.8858047
+      e03: 0
       e10: 0
       e11: 0.64563334
       e12: 0
@@ -695,11 +695,11 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Enemy
+    - Assets/Animations/EnemyPig
   m_ViewMode: 1
   m_StartGridSize: 55
   m_LastFolders:
-  - Assets/Scripts/Enemy
+  - Assets/Animations/EnemyPig
   m_LastFoldersGridSize: 55
   m_LastProjectPath: /Volumes/TOSHIBA EXT/Copia Seguridad/Otros/Pig Kingdom/KingomPigRepo/Pig-Kingdom/Pig
     Dungeon
@@ -707,9 +707,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fa3d0000
-    m_LastClickedID: 15866
-    m_ExpandedIDs: 00000000183d00001a3d00001c3d00002a3d0000323d000000ca9a3b
+    m_SelectedIDs: 643d0000
+    m_LastClickedID: 15716
+    m_ExpandedIDs: 000000001e3d0000203d0000223d0000343d00003c3d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -737,7 +737,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000183d00001a3d00001c3d0000
+    m_ExpandedIDs: 000000001e3d0000203d0000223d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 15008
+  m_LastSelectedObjectID: 14976
 --- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
