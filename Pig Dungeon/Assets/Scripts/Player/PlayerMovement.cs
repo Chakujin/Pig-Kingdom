@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator playerAnimator;
 
+    private Transform t_spawnPosition;
     public Transform attackPoint;
     public Transform LeftDetector;
     public Transform RigthDetector;
@@ -33,13 +34,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]private bool b_isLeft;
 
     //Door
-    public bool doorGo = false;
+    public bool doorTrigger = false;
     private bool UsingDoor = false;
+
+    private void Awake()
+    {
+        t_spawnPosition = GameObject.FindGameObjectWithTag("SpawnPlayer").transform;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+
+        transform.position = t_spawnPosition.position;
     }
 
     // Update is called once per frame
@@ -66,6 +74,16 @@ public class PlayerMovement : MonoBehaviour
                 b_crouch = false;
             }
 
+            //Door
+            if (doorTrigger == true)
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    StartCoroutine(OpenDoor());
+                    UsingDoor = true;
+                }
+            }
+
             //Attack
             if (Input.GetMouseButtonDown(0))
             {
@@ -74,15 +92,6 @@ public class PlayerMovement : MonoBehaviour
                     f_currentTime = 0f;
                     Attack();
                 }
-            }
-        }
-        //Door
-        if(doorGo == true)
-        {
-            if (Input.GetKeyDown(KeyCode.F) && UsingDoor == false)
-            {
-                StartCoroutine(OpenDoor());
-                UsingDoor = true;
             }
         }
 
@@ -153,14 +162,11 @@ public class PlayerMovement : MonoBehaviour
     {
         playerAnimator.SetBool("IsCrouching", isCrouching);
     }
-    public void EarlyDoorClose()
-    {
-        Debug.Log("Pase");
-        UsingDoor = false;
-    }
+
     private IEnumerator OpenDoor()
     {
         playerAnimator.SetBool("GoDoor",true);
+        Debug.Log("OpenDoor");
         yield return new WaitForSeconds(3f);
     }
 

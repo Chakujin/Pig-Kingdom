@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8888664724810771937}
   - component: {fileID: 4778696205925996138}
   - component: {fileID: 7068597691756640217}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,3 +142,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAnimator: {fileID: 4778696205925996138}
+  myColliderDoor: {fileID: 8888664724810771937}
+  spawnDoor: 0
