@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
 
+    private DoorScript m_doorScript;
+
     [SerializeField]private bool b_isRigth;
     [SerializeField]private bool b_isLeft;
 
@@ -163,9 +165,16 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetBool("IsCrouching", isCrouching);
     }
 
+    //Take door script to activate animator bools
+    public void takeDoor(DoorScript doorScript)
+    {
+        m_doorScript = doorScript;
+    }
     private IEnumerator OpenDoor()
     {
         playerAnimator.SetBool("GoDoor",true);
+        m_doorScript.myAnimator.SetBool("DoorOut",true);
+
         Debug.Log("OpenDoor");
         yield return new WaitForSeconds(3f);
     }

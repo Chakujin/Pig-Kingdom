@@ -14,13 +14,7 @@ public class DoorScript : MonoBehaviour
         {
             myColliderDoor.enabled = false;
             myAnimator.SetTrigger("DoorTest");
-            //StartCoroutine(openMyDoor());
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-
     }
 
     //Enter Door trigger
@@ -29,6 +23,7 @@ public class DoorScript : MonoBehaviour
         if(collision.tag == "Player")
         {
             collision.GetComponent<PlayerMovement>().doorTrigger = true;
+            collision.GetComponent<PlayerMovement>().takeDoor(this);
         }
     }
     //Exit door trigger
@@ -38,12 +33,5 @@ public class DoorScript : MonoBehaviour
         {
             collision.GetComponent<PlayerMovement>().doorTrigger = false;
         }
-    }
-
-    private IEnumerator openMyDoor()
-    {
-        myAnimator.SetBool("DoorIn", true);
-        yield return new WaitForSeconds(0.1f);
-        myAnimator.SetBool("DoorIn", false);
     }
 }
