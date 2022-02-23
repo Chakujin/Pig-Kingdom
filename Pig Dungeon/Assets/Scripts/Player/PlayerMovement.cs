@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             //Door
-            if (doorTrigger == true)
+            if (doorTrigger == true && UsingDoor == false)
             {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
