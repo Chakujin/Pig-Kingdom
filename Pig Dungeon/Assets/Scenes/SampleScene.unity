@@ -2608,6 +2608,11 @@ PrefabInstance:
       propertyPath: detectRange.x
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1484126203227210902, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
+        type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 2016295271545043940, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
         type: 3}
       propertyPath: m_LocalPosition.x

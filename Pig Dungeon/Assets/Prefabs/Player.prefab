@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6312605569829605607}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: CelingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1180067777426957540}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,6 +283,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1180067777426957540}
   m_CeilingCheck: {fileID: 6312605569829605607}
   m_CrouchDisableCollider: {fileID: 2049739557251344022}
+  m_Rigidbody2D: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -314,6 +315,9 @@ MonoBehaviour:
     m_Bits: 512
   currentHealth: 0
   maxHealth: 3
+  b_isRigth: 0
+  b_isLeft: 0
+  doorTrigger: 0
 --- !u!50 &578770668088433481
 Rigidbody2D:
   serializedVersion: 4
@@ -386,7 +390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 106376319959491688}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LeftDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1781612389666644910}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: RigthDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3974498430876432235}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

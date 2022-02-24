@@ -38,29 +38,37 @@ public class EnemyPigBomb : EnemyClass
 
             foreach (Collider2D playerRigth in detectRigthPlayer)
             {
+                Debug.Log("derecha");
                 detectHitRigth = true;
                 detectHitLeft = false;
                 //Detect Player Rigth
                 foreach (Collider2D player in hitEnemyes)
                 {
-                    StartCoroutine(startAttack());
-                    b_startAttack = true;
-                    mySpriteRenderer.flipX = false;
-                    move = false;
+                    if (b_startAttack == false)
+                    {
+                        b_startAttack = true;
+                        StartCoroutine(startAttack());
+                        mySpriteRenderer.flipX = false;
+                        move = false;
+                    }
                 }
             }
 
             foreach (Collider2D playerLeft in detectLeftPlayer)
             {
+                Debug.Log("izquierda");
                 detectHitRigth = false;
                 detectHitLeft = true;
                 //Detect Player Left
                 foreach (Collider2D player in hitEnemyes)
                 {
-                    StartCoroutine(startAttack());
-                    b_startAttack = true;
-                    mySpriteRenderer.flipX = true;
-                    move = false;
+                    if (b_startAttack == false)
+                    {
+                        b_startAttack = true;
+                        StartCoroutine(startAttack());
+                        mySpriteRenderer.flipX = true;
+                        move = false;
+                    }
                 }
             }
         }
@@ -68,6 +76,7 @@ public class EnemyPigBomb : EnemyClass
 
     private IEnumerator startAttack()
     {
+        Debug.Log("instanica");
         EnemyAnimator.SetTrigger("Attack");
 
         if (detectHitLeft == true)
@@ -80,8 +89,19 @@ public class EnemyPigBomb : EnemyClass
         }
 
         yield return new WaitForSeconds(0.2f);
-        Instantiate(bomb, spawnBomb);
-        yield return new WaitForSeconds(1f);
+
+        GameObject mybomb = Instantiate(bomb, spawnBomb);
+
+        if (detectHitLeft == true)
+        {
+            mybomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(4, 1), ForceMode2D.Impulse);
+        }
+        else if (detectHitRigth == true)
+        {
+            mybomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-4, 1), ForceMode2D.Impulse);
+        }
+
+        yield return new WaitForSeconds(4f);
         b_startAttack = false;
     }
 
