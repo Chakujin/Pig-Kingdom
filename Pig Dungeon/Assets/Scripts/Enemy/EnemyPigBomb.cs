@@ -89,16 +89,16 @@ public class EnemyPigBomb : EnemyClass
         }
 
         yield return new WaitForSeconds(0.2f);
-
-        GameObject mybomb = Instantiate(bomb, spawnBomb);
-
+        EnemyAnimator.SetTrigger("Reload");
         if (detectHitLeft == true)
         {
-            mybomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(4, 1), ForceMode2D.Impulse);
+            GameObject mybomb = Instantiate(bomb, spawnBomb);
+            mybomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(4, 0), ForceMode2D.Impulse);
         }
         else if (detectHitRigth == true)
         {
-            mybomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-4, 1), ForceMode2D.Impulse);
+            GameObject mybomb = Instantiate(bomb, spawnBomb); //Change spawn position to invert
+            mybomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-4, 0), ForceMode2D.Impulse);
         }
 
         yield return new WaitForSeconds(4f);
