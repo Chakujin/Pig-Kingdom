@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemyes)
         {
-            enemy.GetComponent<EnemyPig>().TakeDamage(attackDamage);
+            enemy.GetComponent<EnemyClass>().TakeDamage(attackDamage);
         }
     }
 

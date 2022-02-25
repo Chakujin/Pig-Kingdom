@@ -34,16 +34,13 @@ public class EnemyClass : MonoBehaviour
         EnemyAnimator.SetBool("Move", false);
         EnemyAnimator.SetTrigger("Hurt");
 
-        //Impulse (Dont Work with AddForce)
         if (detectHitLeft == true)
         {
             mySpriteRenderer.flipX = true;
-            //Debug.Log("ForceLeft");
         }
         else if (detectHitRigth == true)
         {
             mySpriteRenderer.flipX = false;
-            //Debug.Log("ForceRigth");
         }
 
         if (currentHealth <= 0)

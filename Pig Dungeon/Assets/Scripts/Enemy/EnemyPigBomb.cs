@@ -8,6 +8,7 @@ public class EnemyPigBomb : EnemyClass
     public Transform detectLeft;
     public Transform detectedPoint;
     public Transform spawnBomb;
+    public Transform spawnBombInverted;
 
     public GameObject bomb;
     public LayerMask playerLayer;
@@ -76,7 +77,6 @@ public class EnemyPigBomb : EnemyClass
 
     private IEnumerator startAttack()
     {
-        Debug.Log("instanica");
         EnemyAnimator.SetTrigger("Attack");
 
         if (detectHitLeft == true)
@@ -92,12 +92,12 @@ public class EnemyPigBomb : EnemyClass
         EnemyAnimator.SetTrigger("Reload");
         if (detectHitLeft == true)
         {
-            GameObject mybomb = Instantiate(bomb, spawnBomb);
+            GameObject mybomb = Instantiate(bomb, spawnBombInverted);
             mybomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(4, 0), ForceMode2D.Impulse);
         }
         else if (detectHitRigth == true)
         {
-            GameObject mybomb = Instantiate(bomb, spawnBomb); //Change spawn position to invert
+            GameObject mybomb = Instantiate(bomb, spawnBomb);
             mybomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-4, 0), ForceMode2D.Impulse);
         }
 

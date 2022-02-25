@@ -30,6 +30,50 @@ Transform:
   m_Father: {fileID: 6895123852428792348}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4334617016672160362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1701942171427318618}
+  - component: {fileID: 4445543101084809443}
+  m_Layer: 9
+  m_Name: BombSpawnInverted
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1701942171427318618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334617016672160362}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.313, y: 0.24, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6895123852428792348}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4445543101084809443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334617016672160362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f12de115b624797b96e90919635394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0.961658, g: 0, b: 1, a: 1}
 --- !u!1 &6827956197663597185
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,6 +154,7 @@ Transform:
   - {fileID: 2016295271545043940}
   - {fileID: 7151915297048643899}
   - {fileID: 413757319740936516}
+  - {fileID: 1701942171427318618}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -137,6 +182,7 @@ MonoBehaviour:
   detectLeft: {fileID: 7151915297048643899}
   detectedPoint: {fileID: 8188152446858750057}
   spawnBomb: {fileID: 413757319740936516}
+  spawnBombInverted: {fileID: 1701942171427318618}
   bomb: {fileID: 6788176667726929257, guid: 263e4b019a60048008c994b828cdaaa4, type: 3}
   playerLayer:
     serializedVersion: 2

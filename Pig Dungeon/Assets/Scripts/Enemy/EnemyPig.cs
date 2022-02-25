@@ -28,30 +28,32 @@ public class EnemyPig : EnemyClass
     // Update is called once per frame
     void Update()
     {
-        //Move and Detect
-        if (Vector2.Distance(transform.position, PointMove[i_currentPoint].transform.position) < 0.1  && b_startAttack == false) //Change Point Move
-        {
-            EnemyAnimator.SetBool("Move",false);
-            i_currentPoint++;
-            i_currentPoint %= PointMove.Length;
-            StartCoroutine(StopMove());
-        }
-        else if (move == true && b_startAttack == false) // Move character
-        {
-            EnemyAnimator.SetBool("Move", true);
-            v_moveDirection = transform.position + PointMove[i_currentPoint].position;
-            transform.position = Vector2.MoveTowards(transform.position, PointMove[i_currentPoint].transform.position, Time.deltaTime * speed);
-            
-            if(v_moveDirection.x - transform.position.x < transform.position.x)
+        if (die == false) {
+            //Move and Detect
+            if (Vector2.Distance(transform.position, PointMove[i_currentPoint].transform.position) < 0.1 && b_startAttack == false) //Change Point Move
             {
-                mySpriteRenderer.flipX = false;
-                //Debug.Log("Izquierda");
+                EnemyAnimator.SetBool("Move", false);
+                i_currentPoint++;
+                i_currentPoint %= PointMove.Length;
+                StartCoroutine(StopMove());
             }
-            else if (v_moveDirection.x - transform.position.x > transform.position.x)
+            else if (move == true && b_startAttack == false) // Move character
             {
-                mySpriteRenderer.flipX = true;
-                //Debug.Log("Derecha");
-            }  
+                EnemyAnimator.SetBool("Move", true);
+                v_moveDirection = transform.position + PointMove[i_currentPoint].position;
+                transform.position = Vector2.MoveTowards(transform.position, PointMove[i_currentPoint].transform.position, Time.deltaTime * speed);
+
+                if (v_moveDirection.x - transform.position.x < transform.position.x)
+                {
+                    mySpriteRenderer.flipX = false;
+                    //Debug.Log("Izquierda");
+                }
+                else if (v_moveDirection.x - transform.position.x > transform.position.x)
+                {
+                    mySpriteRenderer.flipX = true;
+                    //Debug.Log("Derecha");
+                }
+            }
         }
         if (die == true)
         {
