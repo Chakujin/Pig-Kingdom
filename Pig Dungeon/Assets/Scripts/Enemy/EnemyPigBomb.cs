@@ -15,6 +15,7 @@ public class EnemyPigBomb : EnemyClass
     public Vector2 sizeDetectors;
     public Vector2 detectRange;
 
+    public float reloadtime;
     private bool b_startAttack = false;
 
     // Start is called before the first frame update
@@ -39,9 +40,9 @@ public class EnemyPigBomb : EnemyClass
 
             foreach (Collider2D playerRigth in detectRigthPlayer)
             {
-                Debug.Log("derecha");
                 detectHitRigth = true;
                 detectHitLeft = false;
+
                 //Detect Player Rigth
                 foreach (Collider2D player in hitEnemyes)
                 {
@@ -57,9 +58,9 @@ public class EnemyPigBomb : EnemyClass
 
             foreach (Collider2D playerLeft in detectLeftPlayer)
             {
-                Debug.Log("izquierda");
                 detectHitRigth = false;
                 detectHitLeft = true;
+
                 //Detect Player Left
                 foreach (Collider2D player in hitEnemyes)
                 {
@@ -90,6 +91,7 @@ public class EnemyPigBomb : EnemyClass
 
         yield return new WaitForSeconds(0.2f);
         EnemyAnimator.SetTrigger("Reload");
+
         if (detectHitLeft == true)
         {
             GameObject mybomb = Instantiate(bomb, spawnBombInverted);
@@ -101,7 +103,7 @@ public class EnemyPigBomb : EnemyClass
             mybomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-4, 0), ForceMode2D.Impulse);
         }
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(reloadtime);
         b_startAttack = false;
     }
 

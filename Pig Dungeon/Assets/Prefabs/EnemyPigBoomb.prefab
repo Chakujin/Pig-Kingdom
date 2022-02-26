@@ -189,6 +189,7 @@ MonoBehaviour:
     m_Bits: 256
   sizeDetectors: {x: 0.5, y: 0.5}
   detectRange: {x: 6, y: 3}
+  reloadtime: 4
 --- !u!212 &4602928658451728263
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -227,7 +228,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 5311959985982804876, guid: e032fcb6cb4954d01875128f663ff350,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

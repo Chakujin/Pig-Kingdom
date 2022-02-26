@@ -47,6 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd1794d325ac46778ed2730aa2b88d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myRb: {fileID: 6184282588503228765}
+  playerTrigger:
+    serializedVersion: 2
+    m_Bits: 1024
+  myAnimator: {fileID: 3485102722908172295}
+  colliderPosition: {fileID: 836540942169788191}
+  b_Start: 0
+  radiusRange: 0.5
 --- !u!212 &228006158516606961
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -107,7 +115,7 @@ Animator:
   m_GameObject: {fileID: 6788176667726929257}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01ee9ac25676e44a1a6d44b2347ca923, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -136,7 +144,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &7355692821822780826
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +185,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 7355692821822780826}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8df821fc7a9af4f8c96b99908b145587, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

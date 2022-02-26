@@ -5,13 +5,13 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     public Rigidbody2D myRb;
-    public CircleCollider2D myCollyder;
     public LayerMask playerTrigger;
     public Animator myAnimator;
-    private bool b_Start = false;
+    public Transform colliderPosition;
+    [SerializeField]private bool b_Start = false;
 
     public float radiusRange;
-    private float f_currentTime;
+    private float f_currentTime = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,36 +27,39 @@ public class Bomb : MonoBehaviour
         if(f_currentTime >= 2f && b_Start == false)
         {
             b_Start = true;
-            myCollyder.enabled = false;
-            ExplosionNoHited();
+            StartCoroutine(StartExplosion());
         }
     }
 
     private void FixedUpdate()
     {
         //If detect player explote 
-        if (b_Start == false) {
-            Collider2D[] playerHited = Physics2D.OverlapCircleAll(transform.position, radiusRange, playerTrigger);
+        if (b_Start == true) {
+            Collider2D[] playerHited = Physics2D.OverlapCircleAll(colliderPosition.position, radiusRange, playerTrigger);
 
             foreach (Collider2D player in playerHited)
             {
-                b_Start = true;
-                StartCoroutine(StartExplosion(player));
+                StartCoroutine(StartHitPlayer(player));
             }
         }
     }
 
-    //If dont detect player
-    private void ExplosionNoHited()
+    private IEnumerator StartHitPlayer(Collider2D player)
     {
-
+        Debug.Log("hiteo");
+        player.GetComponentInParent<PlayerMovement>().TakeDamage(1);
+        yield return new WaitForSeconds(5f);
     }
 
-    private IEnumerator StartExplosion(Collider2D player)
+    private IEnumerator StartExplosion()
     {
-        myCollyder.enabled = false;
-        player.GetComponentInParent<PlayerMovement>().TakeDamage(1);
+        myAnimator.SetTrigger("boom");
         yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(colliderPosition.position, radiusRange);
     }
 }
