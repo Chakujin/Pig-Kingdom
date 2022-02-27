@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - SpawnPlayer
+  - Background
   layers:
   - Default
   - TransparentFX

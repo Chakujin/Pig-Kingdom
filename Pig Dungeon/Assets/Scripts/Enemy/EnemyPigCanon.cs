@@ -48,7 +48,7 @@ public class EnemyPigCanon : EnemyClass
           
           foreach (Collider2D player in detectPlayer)
           {
-            Debug.Log("disparo");
+            //Debug.Log("disparo");
             if (b_start == false)
             {
              b_start = true;
