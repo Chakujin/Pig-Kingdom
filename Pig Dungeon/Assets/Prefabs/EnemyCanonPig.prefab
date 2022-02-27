@@ -155,11 +155,13 @@ MonoBehaviour:
   detectHitLeft: 0
   EnemyAnimator: {fileID: 8560716258706346437}
   mySpriteRenderer: {fileID: 7349202251652856760}
+  canonPig: {fileID: 6224898062287154287}
   detectRangePosition: {fileID: 601411225927261272}
   TargetPlayer:
     serializedVersion: 2
     m_Bits: 1024
-  detectRange: 0
+  detectRange: {x: 5, y: 4}
+  f_cadence: 4
   CanonAnimator: {fileID: 1338077266844729071}
   CanonBallSpawn: {fileID: 4803668842817653298}
   canonBall: {fileID: 4731021284164285196, guid: 7263709a573474154ac82f8d78b900f8,
@@ -397,7 +399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8181431345610248080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.323, y: 0, z: 0}
+  m_LocalPosition: {x: -2.15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 958829521117994588}

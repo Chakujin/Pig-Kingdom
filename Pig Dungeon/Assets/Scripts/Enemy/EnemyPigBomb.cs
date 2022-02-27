@@ -42,7 +42,6 @@ public class EnemyPigBomb : EnemyClass
             {
                 detectHitRigth = true;
                 detectHitLeft = false;
-
                 //Detect Player Rigth
                 foreach (Collider2D player in hitEnemyes)
                 {
@@ -60,7 +59,6 @@ public class EnemyPigBomb : EnemyClass
             {
                 detectHitRigth = false;
                 detectHitLeft = true;
-
                 //Detect Player Left
                 foreach (Collider2D player in hitEnemyes)
                 {
