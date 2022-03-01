@@ -31,7 +31,6 @@ public class EnemyPigBox : MonoBehaviour
         {
             f_currentTime = 0;
             boxAnimator.SetTrigger("loock");
-            Debug.Log("miro");
         }
     }
     private void FixedUpdate()

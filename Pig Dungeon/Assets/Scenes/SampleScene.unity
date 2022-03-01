@@ -2478,9 +2478,16 @@ Transform:
   - {fileID: 496160672}
   - {fileID: 258125503}
   - {fileID: 3121547339162139289}
+  - {fileID: 1697489942}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1697489942 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4775243766804886796, guid: 5e3305cd2ab0b43239f83540dccef1a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1717857867699852670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1819957693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2738,6 +2745,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5068202398735058239, guid: 1ace1577eb4eb4828bf79afed57049f6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5077031546587048951, guid: 1ace1577eb4eb4828bf79afed57049f6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2869,7 +2881,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1654184562}
     m_Modifications:
     - target: {fileID: 2418768434853227838, guid: 5e3305cd2ab0b43239f83540dccef1a7,
         type: 3}
@@ -2894,17 +2906,17 @@ PrefabInstance:
     - target: {fileID: 4775243766804886796, guid: 5e3305cd2ab0b43239f83540dccef1a7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4775243766804886796, guid: 5e3305cd2ab0b43239f83540dccef1a7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4775243766804886796, guid: 5e3305cd2ab0b43239f83540dccef1a7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4775243766804886796, guid: 5e3305cd2ab0b43239f83540dccef1a7,
         type: 3}
@@ -2914,7 +2926,7 @@ PrefabInstance:
     - target: {fileID: 4775243766804886796, guid: 5e3305cd2ab0b43239f83540dccef1a7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4775243766804886796, guid: 5e3305cd2ab0b43239f83540dccef1a7,
         type: 3}
@@ -2955,6 +2967,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyPigBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078969454358451401, guid: 5e3305cd2ab0b43239f83540dccef1a7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3305cd2ab0b43239f83540dccef1a7, type: 3}
