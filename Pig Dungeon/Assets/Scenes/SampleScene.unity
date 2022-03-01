@@ -462,7 +462,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -2295,6 +2295,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3522560745552679825, guid: 7e1697e8ab9074512850be4d820f07c2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4931917356120375276, guid: 7e1697e8ab9074512850be4d820f07c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2866,15 +2871,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2418768434853227838, guid: 5e3305cd2ab0b43239f83540dccef1a7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4775243766804886796, guid: 5e3305cd2ab0b43239f83540dccef1a7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: -0.77
       objectReference: {fileID: 0}
     - target: {fileID: 4775243766804886796, guid: 5e3305cd2ab0b43239f83540dccef1a7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.726
+      value: -1.47
       objectReference: {fileID: 0}
     - target: {fileID: 4775243766804886796, guid: 5e3305cd2ab0b43239f83540dccef1a7,
         type: 3}
@@ -2920,6 +2930,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794307929791264507, guid: 5e3305cd2ab0b43239f83540dccef1a7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896649279493898730, guid: 5e3305cd2ab0b43239f83540dccef1a7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253770127643371982, guid: 5e3305cd2ab0b43239f83540dccef1a7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592128498673264567, guid: 5e3305cd2ab0b43239f83540dccef1a7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9078969454358451401, guid: 5e3305cd2ab0b43239f83540dccef1a7,
         type: 3}
@@ -3232,6 +3262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522560745552679825, guid: 7e1697e8ab9074512850be4d820f07c2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4931917356120375276, guid: 7e1697e8ab9074512850be4d820f07c2,
         type: 3}
