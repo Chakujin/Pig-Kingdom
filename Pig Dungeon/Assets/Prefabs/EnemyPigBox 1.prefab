@@ -146,7 +146,8 @@ MonoBehaviour:
   detectedPoint: {fileID: 8215858016886030052}
   detectRigth: {fileID: 1755823103876164969}
   detectLeft: {fileID: 6982280381073448886}
-  sizeDetectors: {x: 4, y: 2}
+  MyBox: {fileID: 0}
+  sizeDetectors: {x: 2, y: 2}
 --- !u!50 &1464048423262665959
 Rigidbody2D:
   serializedVersion: 4
