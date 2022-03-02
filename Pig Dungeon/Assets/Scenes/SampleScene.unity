@@ -2298,7 +2298,7 @@ PrefabInstance:
     - target: {fileID: 3522560745552679825, guid: 7e1697e8ab9074512850be4d820f07c2,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4931917356120375276, guid: 7e1697e8ab9074512850be4d820f07c2,
         type: 3}
@@ -3005,6 +3005,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9078969454358451401, guid: 5e3305cd2ab0b43239f83540dccef1a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3305cd2ab0b43239f83540dccef1a7, type: 3}
 --- !u!1001 &2408967079267795140
@@ -3119,6 +3124,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6920782373893354457, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7151915297048643899, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3156,7 +3166,7 @@ PrefabInstance:
     - target: {fileID: 958829521117994588, guid: 597fe6b7c2a3948babfd2e74bfa34f16,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -64.75637
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 958829521117994588, guid: 597fe6b7c2a3948babfd2e74bfa34f16,
         type: 3}
@@ -3243,6 +3253,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5259832760905973707, guid: e06eb520e332241bfb40779bbed25bef,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8594352967298506254, guid: e06eb520e332241bfb40779bbed25bef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3315,7 +3330,7 @@ PrefabInstance:
     - target: {fileID: 3522560745552679825, guid: 7e1697e8ab9074512850be4d820f07c2,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4931917356120375276, guid: 7e1697e8ab9074512850be4d820f07c2,
         type: 3}
@@ -3381,10 +3396,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1654184562}
     m_Modifications:
+    - target: {fileID: 3687177231360461504, guid: bdd2ba86d0dd54ae1bad5fc0249d6dd9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.07
+      objectReference: {fileID: 0}
     - target: {fileID: 5249969094344131325, guid: bdd2ba86d0dd54ae1bad5fc0249d6dd9,
         type: 3}
       propertyPath: m_Name
       value: EnemyPigDropBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249969094344131325, guid: bdd2ba86d0dd54ae1bad5fc0249d6dd9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249969094344131325, guid: bdd2ba86d0dd54ae1bad5fc0249d6dd9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445020055280531487, guid: bdd2ba86d0dd54ae1bad5fc0249d6dd9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8601958204631196472, guid: bdd2ba86d0dd54ae1bad5fc0249d6dd9,
         type: 3}
@@ -3441,5 +3476,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9019606874040838798, guid: bdd2ba86d0dd54ae1bad5fc0249d6dd9,
+        type: 3}
+      propertyPath: detectRange.x
+      value: 9.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019606874040838798, guid: bdd2ba86d0dd54ae1bad5fc0249d6dd9,
+        type: 3}
+      propertyPath: sizeDetectors.x
+      value: 2.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019606874040838798, guid: bdd2ba86d0dd54ae1bad5fc0249d6dd9,
+        type: 3}
+      propertyPath: sizeDetectors.y
+      value: 4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019606874040838798, guid: bdd2ba86d0dd54ae1bad5fc0249d6dd9,
+        type: 3}
+      propertyPath: Box
+      value: 
+      objectReference: {fileID: 7213274093450958483, guid: 5fe84e3d5b75f48339925dc889df8802,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd2ba86d0dd54ae1bad5fc0249d6dd9, type: 3}

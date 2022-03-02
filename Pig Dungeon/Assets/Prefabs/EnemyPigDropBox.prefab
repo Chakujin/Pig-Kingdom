@@ -173,9 +173,9 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
-  sizeDetectors: {x: 0, y: 0}
-  detectRange: {x: 0, y: 0}
-  reloadtime: 0
+  sizeDetectors: {x: 1.02, y: 0.96}
+  detectRange: {x: 7.27, y: 4.02}
+  reloadtime: 4
 --- !u!212 &1671062854115063459
 SpriteRenderer:
   m_ObjectHideFlags: 0

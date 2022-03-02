@@ -92,13 +92,13 @@ public class EnemyPigDropBox: EnemyClass
 
         if (detectHitLeft == true)
         {
-            GameObject mybomb = Instantiate(Box, spawnBoxInverted);
-            mybomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(4, 0), ForceMode2D.Impulse);
+            GameObject mybox = Instantiate(Box, spawnBoxInverted);
+            mybox.GetComponentInChildren<Rigidbody2D>().AddForce(new Vector2(4, 0), ForceMode2D.Impulse);
         }
         else if (detectHitRigth == true)
         {
-            GameObject mybomb = Instantiate(Box, spawnBox);
-            mybomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-4, 0), ForceMode2D.Impulse);
+            GameObject mybox = Instantiate(Box, spawnBox);
+            mybox.GetComponentInChildren<Rigidbody2D>().AddForce(new Vector2(-4, 0), ForceMode2D.Impulse);
         }
 
         yield return new WaitForSeconds(reloadtime);
