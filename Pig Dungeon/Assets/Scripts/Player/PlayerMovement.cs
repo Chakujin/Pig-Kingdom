@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public float attackRange = 0.5f;
     private int attackDamage = 10;
     public LayerMask enemyLayer;
+    public LayerMask BoxLayer;
     private float F_timeAttack = 0.7f;
 
     public int currentHealth;
@@ -128,10 +129,16 @@ public class PlayerMovement : MonoBehaviour
     {
         playerAnimator.SetTrigger("Attack");
         Collider2D[] hitEnemyes = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+        Collider2D[] hitBox = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, BoxLayer);
 
         foreach (Collider2D enemy in hitEnemyes)
         {
             enemy.GetComponent<EnemyClass>().TakeDamage(attackDamage);
+        }
+
+        foreach (Collider2D box in hitBox)
+        {
+            box.GetComponent<BoxNormal>().hited();
         }
     }
 
