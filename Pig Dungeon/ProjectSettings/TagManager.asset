@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SpawnPlayer
   - Background
+  - hpbar
   layers:
   - Default
   - TransparentFX

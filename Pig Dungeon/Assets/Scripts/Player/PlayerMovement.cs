@@ -40,15 +40,19 @@ public class PlayerMovement : MonoBehaviour
     public bool doorTrigger = false;
     private bool UsingDoor = false;
 
+    //UI
+    private HpBar m_hpbar;
+
     private void Awake()
     {
         t_spawnPosition = GameObject.FindGameObjectWithTag("SpawnPlayer").transform;
+        m_hpbar = GameObject.FindGameObjectWithTag("hpbar").GetComponent<HpBar>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
 
         transform.position = t_spawnPosition.position;
     }
@@ -164,7 +168,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void takeHeart()
     {
-
+        if (currentHealth >= maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        else
+        {
+            m_hpbar.addHeart();
+        }
     }
 
     public void takeDiamond()

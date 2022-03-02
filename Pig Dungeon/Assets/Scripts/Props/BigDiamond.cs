@@ -33,7 +33,6 @@ public class BigDiamond : MonoBehaviour
 
     private IEnumerator taked()
     {
-        Debug.Log("algo");
         myAnimator.SetTrigger("take");
         yield return new WaitForSeconds(0.2f);
         Destroy(this.gameObject);
