@@ -161,6 +161,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     #endregion
+
+    public void takeHeart()
+    {
+
+    }
+
+    public void takeDiamond()
+    {
+
+    }
+
     #region ANIMATIONS
     //Animators
     public void OnLanding()
