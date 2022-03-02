@@ -13,7 +13,6 @@ public class BoxNormal : MonoBehaviour
     public Animator myAnimation;
     public float timeQuitPieces;
 
-
     void Start()
     {
         
@@ -24,7 +23,7 @@ public class BoxNormal : MonoBehaviour
         StartCoroutine(breackBox());
 
         //Drop items chance
-        int i_heart = Random.Range(0,1);
+        int i_heart = Random.Range(0,2);
 
         switch (i_heart)
         {
@@ -32,7 +31,7 @@ public class BoxNormal : MonoBehaviour
                 break;
 
             case 1:
-               GameObject instHeart = Instantiate(heart, transform);
+                GameObject instHeart = Instantiate(heart, transform);
                 instHeart.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,3),ForceMode2D.Impulse);
                 break;
             default:
@@ -40,7 +39,7 @@ public class BoxNormal : MonoBehaviour
                 break;
         }
 
-        int i_diamond = Random.Range(0, 1);
+        int i_diamond = Random.Range(0,2);
 
         switch (i_diamond)
         {
@@ -48,7 +47,7 @@ public class BoxNormal : MonoBehaviour
                 break;
 
             case 1:
-               GameObject instDiamond = Instantiate(diamond, transform);
+                GameObject instDiamond = Instantiate(diamond, transform);
                 instDiamond.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,3), ForceMode2D.Impulse);
                 break;
             default:

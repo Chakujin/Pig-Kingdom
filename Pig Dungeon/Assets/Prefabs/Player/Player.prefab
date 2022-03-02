@@ -148,7 +148,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202098759063259090}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: dd1389dbc00684d3f83940bfeb50aa51, type: 2}
   m_CullingMode: 0
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 4017907376227863677}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,10 +286,32 @@ MonoBehaviour:
   m_Rigidbody2D: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1484956250537672220}
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCrouchEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1484956250537672220}
+        m_MethodName: OnCrouching
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1484956250537672220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,11 +330,14 @@ MonoBehaviour:
   attackPoint: {fileID: 3974498430876432235}
   LeftDetector: {fileID: 106376319959491688}
   RigthDetector: {fileID: 1781612389666644910}
-  sizeDetectors: {x: 0, y: 0}
-  attackRange: 0.5
+  sizeDetectors: {x: 1, y: 0.4}
+  attackRange: 0.4
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
+  BoxLayer:
+    serializedVersion: 2
+    m_Bits: 8192
   currentHealth: 0
   maxHealth: 3
   b_isRigth: 0

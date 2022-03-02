@@ -138,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (Collider2D box in hitBox)
         {
-            box.GetComponent<BoxNormal>().hited();
+            box.GetComponentInParent<BoxNormal>().hited();
         }
     }
 
