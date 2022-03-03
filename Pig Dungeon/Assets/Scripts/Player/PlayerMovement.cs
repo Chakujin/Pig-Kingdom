@@ -149,6 +149,7 @@ public class PlayerMovement : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        m_hpbar.quitHeart();
         playerAnimator.SetTrigger("isHited");
 
         if (b_isRigth == true)

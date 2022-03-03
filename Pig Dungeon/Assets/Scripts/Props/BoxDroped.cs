@@ -7,6 +7,10 @@ public class BoxDroped : MonoBehaviour
     public Animator myAnimator;
     public GameObject box;
     public GameObject[] pieces;
+    public BoxCollider2D mycollider;
+    public Transform boxTransform;
+    private Transform m_currentPosition;
+    private bool b_hited = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,17 +21,27 @@ public class BoxDroped : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(b_hited == true)
+        {
+            boxTransform.position = m_currentPosition.position;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
+            m_currentPosition = boxTransform;  // dont move position
+            b_hited = true;
+            mycollider.enabled = false;
+
             collision.GetComponent<PlayerMovement>().TakeDamage(1);
             StartCoroutine(Breack());
         }
         if (collision.tag == "Background")
         {
+            m_currentPosition = boxTransform;  // dont move position
+            b_hited = true;
+            mycollider.enabled = false;
             StartCoroutine(Breack());
         }
     }

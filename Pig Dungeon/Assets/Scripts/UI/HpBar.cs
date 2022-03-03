@@ -6,8 +6,8 @@ public class HpBar : MonoBehaviour
 {
     public GameObject[] hearts;
     private PlayerMovement m_playermovement;
-    private int i_currentHeal; 
-
+    private int i_currentHeal;
+    public Animator[] animatorHearts;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,5 +47,23 @@ public class HpBar : MonoBehaviour
                 Debug.Log("Peta");
                 break;
         }
+    }
+
+    public void quitHeart()
+    {
+        i_currentHeal = m_playermovement.currentHealth;
+
+        if (i_currentHeal <= m_playermovement.maxHealth && i_currentHeal >= 0)
+        {
+            StartCoroutine(quitHearts(i_currentHeal));
+        }
+    }
+
+    private IEnumerator quitHearts(int heal)
+    {
+        Debug.Log("damage");
+        animatorHearts[heal].SetTrigger("hit");
+        yield return new WaitForSeconds(0.3f);
+        hearts[heal].SetActive(false);
     }
 }

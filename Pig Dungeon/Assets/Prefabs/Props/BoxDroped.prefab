@@ -574,6 +574,8 @@ MonoBehaviour:
   - {fileID: 5597622027675824372}
   - {fileID: 3654986251928027417}
   - {fileID: 8192786591116400158}
+  mycollider: {fileID: 2083375410365606214}
+  boxTransform: {fileID: 8839141263977167101}
 --- !u!50 &4650504270096980781
 Rigidbody2D:
   serializedVersion: 4
