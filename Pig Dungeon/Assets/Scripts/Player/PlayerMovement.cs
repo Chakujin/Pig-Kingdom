@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
 
+    public int diamondTotal;
+
     private DoorScript m_doorScript;
 
     [SerializeField]private bool b_isRigth;
@@ -42,11 +44,13 @@ public class PlayerMovement : MonoBehaviour
 
     //UI
     private HpBar m_hpbar;
+    private DiamondCount m_diamondCount;
 
     private void Awake()
     {
         t_spawnPosition = GameObject.FindGameObjectWithTag("SpawnPlayer").transform;
         m_hpbar = GameObject.FindGameObjectWithTag("hpbar").GetComponent<HpBar>();
+        m_diamondCount = GameObject.FindGameObjectWithTag("diamondCount").GetComponent<DiamondCount>();
     }
 
     // Start is called before the first frame update
@@ -181,7 +185,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void takeDiamond()
     {
+        diamondTotal++;
 
+        m_diamondCount.updateDiamondCount(diamondTotal);
     }
 
     #region ANIMATIONS

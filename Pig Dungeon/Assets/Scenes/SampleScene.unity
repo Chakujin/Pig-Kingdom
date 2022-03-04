@@ -1545,6 +1545,75 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &913052340
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5722630406794911560, guid: 9505ab98d6a444d90ac7518593cd62ec,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.910813
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722630406794911560, guid: 9505ab98d6a444d90ac7518593cd62ec,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3142556
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722630406794911560, guid: 9505ab98d6a444d90ac7518593cd62ec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722630406794911560, guid: 9505ab98d6a444d90ac7518593cd62ec,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722630406794911560, guid: 9505ab98d6a444d90ac7518593cd62ec,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722630406794911560, guid: 9505ab98d6a444d90ac7518593cd62ec,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722630406794911560, guid: 9505ab98d6a444d90ac7518593cd62ec,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722630406794911560, guid: 9505ab98d6a444d90ac7518593cd62ec,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722630406794911560, guid: 9505ab98d6a444d90ac7518593cd62ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722630406794911560, guid: 9505ab98d6a444d90ac7518593cd62ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722630406794911560, guid: 9505ab98d6a444d90ac7518593cd62ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095701877382019388, guid: 9505ab98d6a444d90ac7518593cd62ec,
+        type: 3}
+      propertyPath: m_Name
+      value: DiamondDrop
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9505ab98d6a444d90ac7518593cd62ec, type: 3}
 --- !u!1 &920865671
 GameObject:
   m_ObjectHideFlags: 0
@@ -2428,7 +2497,7 @@ Transform:
   - {fileID: 1133942212}
   - {fileID: 433287296}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1654184561
 GameObject:
@@ -2463,7 +2532,7 @@ Transform:
   - {fileID: 1697489942}
   - {fileID: 938537296667873126}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1697489942 stripped
 Transform:
@@ -2568,7 +2637,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2101847005
 GameObject:
@@ -2700,6 +2769,11 @@ PrefabInstance:
       propertyPath: currentHealth
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1484956250537672220, guid: 1ace1577eb4eb4828bf79afed57049f6,
+        type: 3}
+      propertyPath: diamondTotal
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5068202398735058239, guid: 1ace1577eb4eb4828bf79afed57049f6,
         type: 3}
       propertyPath: m_Name
@@ -2743,7 +2817,7 @@ PrefabInstance:
     - target: {fileID: 5077031546587048951, guid: 1ace1577eb4eb4828bf79afed57049f6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5077031546587048951, guid: 1ace1577eb4eb4828bf79afed57049f6,
         type: 3}
