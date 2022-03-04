@@ -54,7 +54,7 @@ MonoBehaviour:
   myAnimator: {fileID: 3485102722908172295}
   colliderPosition: {fileID: 836540942169788191}
   b_Start: 0
-  radiusRange: 0.5
+  radiusRange: 0.6
 --- !u!212 &228006158516606961
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -140,7 +140,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8df821fc7a9af4f8c96b99908b145587, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1

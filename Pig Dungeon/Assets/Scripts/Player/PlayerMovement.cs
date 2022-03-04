@@ -155,6 +155,7 @@ public class PlayerMovement : MonoBehaviour
         currentHealth -= damage;
         m_hpbar.quitHeart();
         playerAnimator.SetTrigger("isHited");
+        CameraPlayer.Instance.ShakeCamera(3f, 0.25f); // ShakeCam
 
         if (b_isRigth == true)
         {

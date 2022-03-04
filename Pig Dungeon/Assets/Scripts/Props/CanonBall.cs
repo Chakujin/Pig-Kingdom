@@ -45,6 +45,7 @@ public class CanonBall : MonoBehaviour
 
     private IEnumerator Collision()
     {
+        CameraPlayer.Instance.ShakeCamera(5f, 0.25f); // ShakeCam
         myCollider.enabled = false;
         yield return new WaitForSeconds(0.7f);
         Destroy(this.gameObject);

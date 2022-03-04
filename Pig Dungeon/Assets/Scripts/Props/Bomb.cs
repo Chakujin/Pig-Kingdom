@@ -12,6 +12,7 @@ public class Bomb : MonoBehaviour
 
     public float radiusRange;
     private float f_currentTime = 0f;
+    private bool b_boom = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,9 +38,13 @@ public class Bomb : MonoBehaviour
         if (b_Start == true) {
             Collider2D[] playerHited = Physics2D.OverlapCircleAll(colliderPosition.position, radiusRange, playerTrigger);
 
-            foreach (Collider2D player in playerHited)
+            if (b_boom == false)
             {
-                StartCoroutine(StartHitPlayer(player));
+                foreach (Collider2D player in playerHited)
+                {
+                    b_boom = true;
+                    StartCoroutine(StartHitPlayer(player));
+                }
             }
         }
     }
@@ -53,6 +58,7 @@ public class Bomb : MonoBehaviour
 
     private IEnumerator StartExplosion()
     {
+        CameraPlayer.Instance.ShakeCamera(5f, 0.25f); // ShakeCam
         myAnimator.SetTrigger("boom");
         yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
