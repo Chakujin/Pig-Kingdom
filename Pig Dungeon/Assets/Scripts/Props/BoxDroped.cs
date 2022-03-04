@@ -34,6 +34,7 @@ public class BoxDroped : MonoBehaviour
             b_hited = true;
             mycollider.enabled = false;
 
+            CameraPlayer.Instance.ShakeCamera(3f, 0.25f); // ShakeCam
             collision.GetComponent<PlayerMovement>().TakeDamage(1);
             StartCoroutine(Breack());
         }
