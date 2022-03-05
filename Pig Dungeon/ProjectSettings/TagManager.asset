@@ -8,6 +8,7 @@ TagManager:
   - Background
   - hpbar
   - diamondCount
+  - gameManager
   layers:
   - Default
   - TransparentFX

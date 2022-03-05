@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private float f_currentTime;
 
+    //Move + Attack
     public CharacterController2D controller;
     private float f_horizontalMove = 0f;
     public float runspeed;
@@ -28,17 +29,17 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask BoxLayer;
     private float F_timeAttack = 0.7f;
 
+    [SerializeField] private bool b_isRigth;
+    [SerializeField] private bool b_isLeft;
+
+    //Manager
     public int currentHealth;
     public int maxHealth;
-
     public int diamondTotal;
-
-    private DoorScript m_doorScript;
-
-    [SerializeField]private bool b_isRigth;
-    [SerializeField]private bool b_isLeft;
+    private GameManager m_gameManager;
 
     //Door
+    private DoorScript m_doorScript;
     public bool doorTrigger = false;
     private bool UsingDoor = false;
 
@@ -48,16 +49,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        m_gameManager = GameObject.FindGameObjectWithTag("gameManager").GetComponent<GameManager>();
         t_spawnPosition = GameObject.FindGameObjectWithTag("SpawnPlayer").transform;
         m_hpbar = GameObject.FindGameObjectWithTag("hpbar").GetComponent<HpBar>();
         m_diamondCount = GameObject.FindGameObjectWithTag("diamondCount").GetComponent<DiamondCount>();
+
+        currentHealth = m_gameManager.playerHeal;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //currentHealth = maxHealth;
-
         transform.position = t_spawnPosition.position;
     }
 

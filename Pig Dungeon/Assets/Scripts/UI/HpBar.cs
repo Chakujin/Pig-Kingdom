@@ -8,9 +8,13 @@ public class HpBar : MonoBehaviour
     private PlayerMovement m_playermovement;
     private int i_currentHeal;
     public Animator[] animatorHearts;
+
+    private GameManager m_gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        m_gameManager = GameObject.FindGameObjectWithTag("gameManager").GetComponent<GameManager>();
         m_playermovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
 
         i_currentHeal = m_playermovement.currentHealth;
@@ -30,6 +34,8 @@ public class HpBar : MonoBehaviour
     public void addHeart()
     {
         i_currentHeal = m_playermovement.currentHealth;
+        m_gameManager.playerHeal = i_currentHeal;
+
         switch (i_currentHeal)
         {
             case 0:
@@ -52,6 +58,7 @@ public class HpBar : MonoBehaviour
     public void quitHeart()
     {
         i_currentHeal = m_playermovement.currentHealth;
+        m_gameManager.playerHeal = i_currentHeal;
 
         if (i_currentHeal <= m_playermovement.maxHealth && i_currentHeal >= 0)
         {
