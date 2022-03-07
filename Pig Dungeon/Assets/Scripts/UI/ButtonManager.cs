@@ -22,7 +22,7 @@ public class ButtonManager : MonoBehaviour
     public void NewGame()
     {
         m_gameManager.saveGame();
-
+        m_gameManager.level = 1;
         SceneManager.LoadScene(1);
     }
 }

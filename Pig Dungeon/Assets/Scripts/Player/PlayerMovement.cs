@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool b_isRigth;
     [SerializeField] private bool b_isLeft;
 
+    private bool b_die = false;
     //Manager
     public int currentHealth;
     public int maxHealth;
@@ -69,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
         f_currentTime += Time.deltaTime;
 
         //Movement
-        if (UsingDoor == false) {
+        if (UsingDoor == false || b_die == false) {
 
             f_horizontalMove = Input.GetAxisRaw("Horizontal") * runspeed;
 
@@ -154,22 +155,26 @@ public class PlayerMovement : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        m_hpbar.quitHeart();
-        playerAnimator.SetTrigger("isHited");
-        CameraPlayer.Instance.ShakeCamera(3f, 0.25f); // ShakeCam
+        if (b_die == false)
+        {
+            currentHealth -= damage;
+            m_hpbar.quitHeart();
+            playerAnimator.SetTrigger("isHited");
+            CameraPlayer.Instance.ShakeCamera(3f, 0.25f); // ShakeCam
 
-        if (b_isRigth == true)
-        {
-            controller.m_Rigidbody2D.AddForce(new Vector2(20,5),ForceMode2D.Impulse);
-        }else if (b_isLeft == true)
-        {
-            controller.m_Rigidbody2D.AddForce(new Vector2(transform.position.x,transform.position.y), ForceMode2D.Impulse);
-        }
-
-        if (currentHealth >= 0)
-        {
-            //Make Die
+            if (b_isRigth == true)
+            {
+                controller.m_Rigidbody2D.AddForce(new Vector2(20, 5), ForceMode2D.Impulse);
+            }
+            else if (b_isLeft == true)
+            {
+                controller.m_Rigidbody2D.AddForce(new Vector2(transform.position.x, transform.position.y), ForceMode2D.Impulse);
+            }
+            if (currentHealth >= 0)
+            {
+                StartCoroutine(diePlayer());
+                b_die = true;
+            }
         }
     }
     #endregion
@@ -199,6 +204,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerAnimator.SetBool("IsJumping", false);
     }
+
     public void OnCrouching(bool isCrouching)
     {
         playerAnimator.SetBool("IsCrouching", isCrouching);
@@ -209,15 +215,25 @@ public class PlayerMovement : MonoBehaviour
     {
         m_doorScript = doorScript;
     }
+
     private IEnumerator OpenDoor()
     {
         playerAnimator.SetBool("GoDoor",true);
         m_doorScript.myAnimator.SetBool("DoorOut",true);
+        m_gameManager.level += 1;
 
-        Debug.Log("OpenDoor");
         yield return new WaitForSeconds(3f);
+        m_gameManager.saveGame();
+        SceneManager.LoadScene(m_gameManager.level);
     }
 
+    private IEnumerator diePlayer()
+    {
+        playerAnimator.SetBool("IsDead", true);
+        yield return new WaitForSeconds(2f);
+        m_gameManager.loadGame();
+        SceneManager.LoadScene(m_gameManager.level);
+    }
     #endregion
 
     //Draw Gizmos
