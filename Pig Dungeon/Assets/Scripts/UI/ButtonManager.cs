@@ -12,8 +12,17 @@ public class ButtonManager : MonoBehaviour
         m_gameManager = GameObject.FindGameObjectWithTag("gameManager").GetComponent<GameManager>();
     }
 
-    public void StartButton()
+    public void Contiune()
     {
-        SceneManager.LoadScene("");
+        m_gameManager.loadGame();
+
+        SceneManager.LoadScene(m_gameManager.level);
+    }
+
+    public void NewGame()
+    {
+        m_gameManager.saveGame();
+
+        SceneManager.LoadScene(1);
     }
 }
