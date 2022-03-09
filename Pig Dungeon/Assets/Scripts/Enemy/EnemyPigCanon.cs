@@ -29,9 +29,9 @@ public class EnemyPigCanon : EnemyClass
         //If is fliped add negative force when instantiate canon ball
         if (canonPig.transform.localScale.x == -1)
         {
-            v_force = new Vector2(4,0);
+            v_force = new Vector2(4,1);
         }
-        else { v_force = new Vector2(-4,0); }
+        else { v_force = new Vector2(-4,1); }
     }
 
     // Update is called once per frame

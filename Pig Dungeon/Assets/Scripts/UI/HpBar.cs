@@ -41,13 +41,13 @@ public class HpBar : MonoBehaviour
             case 0:
                 break;
             case 1:
-                hearts[1].SetActive(true);
+                hearts[0].SetActive(true);
                 break;
             case 2:
-                hearts[2].SetActive(true);
+                hearts[1].SetActive(true);
                 break;
             case 3:
-                hearts[3].SetActive(true);
+                hearts[2].SetActive(true);
                 break;
             default:
                 Debug.Log("Peta");
