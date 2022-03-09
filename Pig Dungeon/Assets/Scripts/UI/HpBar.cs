@@ -6,7 +6,7 @@ public class HpBar : MonoBehaviour
 {
     public GameObject[] hearts;
     private PlayerMovement m_playermovement;
-    private int i_currentHeal;
+    [SerializeField] private int i_currentHeal;
     public Animator[] animatorHearts;
 
     private GameManager m_gameManager;

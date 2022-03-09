@@ -183,10 +183,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (currentHealth >= maxHealth)
         {
+            Debug.Log("Max Heal");
             currentHealth = maxHealth;
         }
         else
         {
+            currentHealth++;
             m_hpbar.addHeart();
         }
     }
