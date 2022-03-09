@@ -170,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 controller.m_Rigidbody2D.AddForce(new Vector2(transform.position.x, transform.position.y), ForceMode2D.Impulse);
             }
-            if (currentHealth >= 0)
+            if (currentHealth <= 0)
             {
                 StartCoroutine(diePlayer());
                 b_die = true;
