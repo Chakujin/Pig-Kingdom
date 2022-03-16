@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public int playerDiamond;
     public int level;
 
-
     private void Awake()
     {
         if(GameManager.inst == null)

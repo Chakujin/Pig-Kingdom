@@ -58,7 +58,7 @@ public class Bomb : MonoBehaviour
 
     private IEnumerator StartExplosion()
     {
-        CameraPlayer.Instance.ShakeCamera(5f, 0.25f); // ShakeCam
+        CameraPlayer.Instance.ShakeCamera(3f, 0.25f); // ShakeCam
         myAnimator.SetTrigger("boom");
         yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
