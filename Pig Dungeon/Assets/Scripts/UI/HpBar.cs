@@ -5,7 +5,7 @@ using UnityEngine;
 public class HpBar : MonoBehaviour
 {
     public GameObject[] hearts;
-    private PlayerMovement m_playermovement;
+    public PlayerMovement m_playermovement;
     [SerializeField] private int i_currentHeal;
     public Animator[] animatorHearts;
 
@@ -15,7 +15,6 @@ public class HpBar : MonoBehaviour
     void Start()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("gameManager").GetComponent<GameManager>();
-        m_playermovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
 
         i_currentHeal = m_playermovement.currentHealth;
 

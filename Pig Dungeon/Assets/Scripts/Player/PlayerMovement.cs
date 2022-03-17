@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -47,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     //UI
     private HpBar m_hpbar;
     private DiamondCount m_diamondCount;
+    private Image m_fadePlayer;
 
     private void Awake()
     {
@@ -54,7 +57,9 @@ public class PlayerMovement : MonoBehaviour
         t_spawnPosition = GameObject.FindGameObjectWithTag("SpawnPlayer").transform;
         m_hpbar = GameObject.FindGameObjectWithTag("hpbar").GetComponent<HpBar>();
         m_diamondCount = GameObject.FindGameObjectWithTag("diamondCount").GetComponent<DiamondCount>();
+        m_fadePlayer = GameObject.FindGameObjectWithTag("FadePlayer").GetComponent<Image>();
 
+        m_hpbar.m_playermovement = this;
         currentHealth = m_gameManager.playerHeal;
     }
 
@@ -222,7 +227,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerAnimator.SetBool("GoDoor",true);
         m_doorScript.myAnimator.SetBool("DoorOut",true);
-        m_gameManager.level += 1;
+        m_gameManager.level++;
 
         yield return new WaitForSeconds(3f);
         m_gameManager.saveGame();
@@ -231,8 +236,14 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator diePlayer()
     {
+        //UI
+        m_fadePlayer.DOFade(1, 2f).SetEase(Ease.InQuart);
+
+        //Animator
         playerAnimator.SetBool("IsDead", true);
+
         yield return new WaitForSeconds(2f);
+        
         m_gameManager.loadGame();
         SceneManager.LoadScene(m_gameManager.level);
     }

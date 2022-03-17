@@ -9,6 +9,7 @@ TagManager:
   - hpbar
   - diamondCount
   - gameManager
+  - FadePlayer
   layers:
   - Default
   - TransparentFX

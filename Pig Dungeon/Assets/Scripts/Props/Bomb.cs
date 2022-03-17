@@ -51,7 +51,7 @@ public class Bomb : MonoBehaviour
 
     private IEnumerator StartHitPlayer(Collider2D player)
     {
-        Debug.Log("hiteo");
+        //Debug.Log("hiteo");
         player.GetComponentInParent<PlayerMovement>().TakeDamage(1);
         yield return new WaitForSeconds(5f);
     }
