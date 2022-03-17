@@ -24,12 +24,6 @@ public class HpBar : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void addHeart()
     {
         i_currentHeal = m_playermovement.currentHealth;

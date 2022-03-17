@@ -34,7 +34,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool b_isRigth;
     [SerializeField] private bool b_isLeft;
 
-    private bool b_die = false;
+    [SerializeField]private bool b_die = false;
+
     //Manager
     public int currentHealth;
     public int maxHealth;
@@ -77,7 +78,10 @@ public class PlayerMovement : MonoBehaviour
         //Movement
         if (UsingDoor == false || b_die == false) {
 
-            f_horizontalMove = Input.GetAxisRaw("Horizontal") * runspeed;
+            if (b_die == false)
+            {
+                f_horizontalMove = Input.GetAxisRaw("Horizontal") * runspeed;
+            }
 
             if (Input.GetButtonDown("Jump"))
             {
