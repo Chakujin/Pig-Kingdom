@@ -42,10 +42,12 @@ public class AudioManager : MonoBehaviour
             s.source.spread = 120f;
 
             //3D Sound
+            /*
             s.source.spatialBlend = s.spatialBlend;
             s.source.rolloffMode = s.rolloffMode;
             s.source.dopplerLevel = s.dopplerLevel;
             s.source.maxDistance = s.maxDistance;
+            */
         }
     }
 
