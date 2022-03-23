@@ -15,6 +15,9 @@ public class EnemyClass : MonoBehaviour
     public Animator EnemyAnimator;
     public SpriteRenderer mySpriteRenderer;
 
+    public GameObject Dialog;
+    public Animator DialogAnim;
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -55,5 +58,13 @@ public class EnemyClass : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(3f);
         Destroy(this.gameObject);
+    }
+    public IEnumerator StartDialog()
+    {
+        Dialog.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        DialogAnim.SetTrigger("Stop");
+        yield return new WaitForSeconds(0.5f);
+        Dialog.SetActive(false);
     }
 }

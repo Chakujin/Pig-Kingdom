@@ -22,6 +22,7 @@ public class EnemyPigBomb : EnemyClass
     void Start()
     {
         currentHealth += maxHealth;
+        StartCoroutine(StartDialog());
     }
 
     // Update is called once per frame

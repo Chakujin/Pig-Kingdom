@@ -25,6 +25,7 @@ public class EnemyPigCanon : EnemyClass
     void Start()
     {
         currentHealth += maxHealth;
+        StartCoroutine(StartDialog());
 
         //If is fliped add negative force when instantiate canon ball
         if (canonPig.transform.localScale.x == -1)

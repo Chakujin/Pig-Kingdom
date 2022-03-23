@@ -2137,6 +2137,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2108852523}
     m_Modifications:
+    - target: {fileID: 1484126203227210902, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
+        type: 3}
+      propertyPath: sizeDetectors.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484126203227210902, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
+        type: 3}
+      propertyPath: sizeDetectors.y
+      value: 2.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484126203227210902, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
+        type: 3}
+      propertyPath: detectRange.x
+      value: 8.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484126203227210902, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
+        type: 3}
+      propertyPath: detectRange.y
+      value: 4.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016295271545043940, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.78
+      objectReference: {fileID: 0}
     - target: {fileID: 6895123852428792348, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2196,6 +2221,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyPigBoomb
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151915297048643899, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1, type: 3}
@@ -2350,6 +2380,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2108852523}
     m_Modifications:
+    - target: {fileID: 1484126203227210902, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
+        type: 3}
+      propertyPath: sizeDetectors.x
+      value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484126203227210902, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
+        type: 3}
+      propertyPath: sizeDetectors.y
+      value: 4.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484126203227210902, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
+        type: 3}
+      propertyPath: detectRange.x
+      value: 10.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484126203227210902, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
+        type: 3}
+      propertyPath: detectRange.y
+      value: 4.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016295271545043940, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.67
+      objectReference: {fileID: 0}
     - target: {fileID: 6895123852428792348, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2409,6 +2464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyPigBoomb (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151915297048643899, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bd9765c7e1a0405d86b6fcd28e9cdc1, type: 3}

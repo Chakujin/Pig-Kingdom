@@ -139,6 +139,8 @@ MonoBehaviour:
   detectHitLeft: 0
   EnemyAnimator: {fileID: 1846099409164327850}
   mySpriteRenderer: {fileID: 4343261319327158538}
+  Dialog: {fileID: 0}
+  DialogAnim: {fileID: 0}
   detectRange: 0.7
   playerLayer:
     serializedVersion: 2

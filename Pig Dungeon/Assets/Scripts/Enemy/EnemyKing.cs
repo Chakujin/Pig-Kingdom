@@ -21,6 +21,7 @@ public class EnemyKing : EnemyClass
     void Start()
     {
         currentHealth = maxHealth;
+        StartCoroutine(StartDialog());
         m_playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         foreach (GameObject platform in platformScape)
