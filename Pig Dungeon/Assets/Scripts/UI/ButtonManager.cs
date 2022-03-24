@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ButtonManager : MonoBehaviour
 {
     private GameManager m_gameManager;
+    public GameObject OptionMenu;
 
     private void Awake()
     {
@@ -24,5 +25,11 @@ public class ButtonManager : MonoBehaviour
         m_gameManager.saveGame();
         m_gameManager.level = 1;
         SceneManager.LoadScene(1);
+    }
+
+    public void Options()
+    {
+        //OptionMenu.SetActive(true);
+        Debug.Log("Open Options");
     }
 }
