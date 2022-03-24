@@ -8,12 +8,15 @@ public class EnemyKing : EnemyClass
     public GameObject[] platformScape;
     public float speed;
     public float detectRange;
+    public bool startFigth = false;
     private bool b_startAttack = false;
 
     public Transform detectedPoint;
     public Transform detectRigth;
     public Transform detectLeft;
     private Transform m_playerTransform;
+
+    private Vector2 m_positionMove;
 
     [SerializeField] private Vector2 sizeDetectors;
 
@@ -33,17 +36,21 @@ public class EnemyKing : EnemyClass
     // Update is called once per frame
     void Update()
     {
+        m_positionMove = new Vector2(m_playerTransform.position.x, transform.position.y);
         if (die == false)
         {
-            if (Vector2.Distance(transform.position, m_playerTransform.position) < 0.1 && b_startAttack == false) //In front of player
+            if(startFigth == true)
             {
-                StartCoroutine(StopMove());
-            }
-            else if (b_startAttack == false && move == true)
-            {
-                EnemyAnimator.SetBool("Move", true);
-                //Move to player
-                transform.position = Vector2.MoveTowards(transform.position, m_playerTransform.position, Time.deltaTime * speed);
+                if (Vector2.Distance(transform.position, m_playerTransform.position) < 0.1 && b_startAttack == false) //In front of player
+                {
+                    StartCoroutine(StopMove());
+                }
+                else if (b_startAttack == false && move == true)
+                {
+                    EnemyAnimator.SetBool("Move", true);
+                    //Move to player
+                    transform.position = Vector2.MoveTowards(transform.position, m_positionMove, Time.deltaTime * speed);
+                }
             }
         }
 
@@ -62,7 +69,6 @@ public class EnemyKing : EnemyClass
         Collider2D[] hitEnemyes = Physics2D.OverlapCircleAll(detectedPoint.position, detectRange, playerLayer);
         Collider2D[] detectRigthPlayer = Physics2D.OverlapBoxAll(detectRigth.position, sizeDetectors, 0, playerLayer);
         Collider2D[] detectLeftPlayer = Physics2D.OverlapBoxAll(detectLeft.position, sizeDetectors, 0, playerLayer);
-
 
         if (b_startAttack == false && die == false)
         {
@@ -126,5 +132,13 @@ public class EnemyKing : EnemyClass
         yield return new WaitForSeconds(2f);
         b_startAttack = false;
         move = true;
+    }
+
+    //Draw gizmos
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(detectedPoint.position, detectRange);
+        Gizmos.DrawWireCube(detectRigth.position, sizeDetectors);
+        Gizmos.DrawWireCube(detectLeft.position, sizeDetectors);
     }
 }

@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4676946033197504198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.54, y: -0.178, z: 0}
+  m_LocalPosition: {x: -1.72, y: -0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8316081677604692237}
@@ -90,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 5535839026648891592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 6735951148510255992}
   - {fileID: 3973194637508184309}
@@ -124,13 +124,17 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  platformScape: []
-  speed: 0
-  detectRange: 0
+  platformScape:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  speed: 4
+  detectRange: 0.66
   detectedPoint: {fileID: 6735951148510255992}
   detectRigth: {fileID: 3973194637508184309}
   detectLeft: {fileID: 5735470142621497898}
-  sizeDetectors: {x: 1, y: 1}
+  sizeDetectors: {x: 6.63, y: 5.23}
 --- !u!212 &1384907047210808470
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -272,7 +276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6296169598024102390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.652, y: -0.157, z: 0}
+  m_LocalPosition: {x: 1.64, y: -0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8316081677604692237}
