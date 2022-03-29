@@ -7,10 +7,12 @@ public class ButtonManager : MonoBehaviour
 {
     private GameManager m_gameManager;
     public GameObject OptionMenu;
+    public GameObject[] MainButtons;
 
     private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("gameManager").GetComponent<GameManager>();
+        OptionMenu.SetActive(false);
     }
 
     public void Contiune()
@@ -29,7 +31,20 @@ public class ButtonManager : MonoBehaviour
 
     public void Options()
     {
-        //OptionMenu.SetActive(true);
-        Debug.Log("Open Options");
+        OptionMenu.SetActive(true);
+
+        foreach(GameObject buttons in MainButtons)
+        {
+            buttons.SetActive(false);
+        }
+    }
+
+    public void BackOptions()
+    {
+        OptionMenu.SetActive(false);
+        foreach (GameObject buttons in MainButtons)
+        {
+            buttons.SetActive(true);
+        }
     }
 }

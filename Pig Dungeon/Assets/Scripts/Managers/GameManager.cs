@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int playerHeal;
     public int playerDiamond;
     public int level;
+    public float MainVolume;
 
     private void Awake()
     {
@@ -37,5 +38,6 @@ public class GameManager : MonoBehaviour
         level = data.level;
         playerHeal = data.heal;
         playerDiamond = data.diamonds;
+        MainVolume = data.volumeMain;
     }
 }
