@@ -23,14 +23,15 @@ public class BoxDroped : MonoBehaviour
     {
         if(b_hited == true)
         {
-            boxTransform.position = m_currentPosition.position;
+            transform.position = m_currentPosition.position;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            m_currentPosition = boxTransform;  // dont move position
+            Debug.Log("Player");
+            m_currentPosition = transform;  // dont move position
             b_hited = true;
             mycollider.enabled = false;
 
@@ -39,7 +40,8 @@ public class BoxDroped : MonoBehaviour
         }
         if (collision.tag == "Background")
         {
-            m_currentPosition = boxTransform;  // dont move position
+            Debug.Log("Background");
+            m_currentPosition = transform;  // dont move position
             b_hited = true;
             mycollider.enabled = false;
             StartCoroutine(Breack());

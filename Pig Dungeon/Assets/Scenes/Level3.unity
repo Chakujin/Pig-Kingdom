@@ -2450,6 +2450,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyPigBoxGeneral
       objectReference: {fileID: 0}
+    - target: {fileID: 9078969454358451401, guid: 5e3305cd2ab0b43239f83540dccef1a7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3305cd2ab0b43239f83540dccef1a7, type: 3}
 --- !u!4 &984108411 stripped
@@ -2749,6 +2754,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806908933139142583, guid: 8b3d3aec30bb1406baabcd373577c296,
+        type: 3}
+      propertyPath: playerHeal
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b3d3aec30bb1406baabcd373577c296, type: 3}
@@ -3069,7 +3079,7 @@ GameObject:
   - component: {fileID: 1908019716}
   m_Layer: 0
   m_Name: Tilemap Collider
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 0
+    x: 1
     y: 66
     width: 1512
     height: 916
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 108
+  controlID: 86
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 109
+  controlID: 87
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 110
+  controlID: 88
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,8 +185,8 @@ MonoBehaviour:
     y: 0
     width: 283
     height: 554
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -211,15 +211,15 @@ MonoBehaviour:
     y: 0
     width: 802
     height: 554
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
   - {fileID: 20}
   - {fileID: 21}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 333, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 165
+  controlID: 158
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -290,8 +290,8 @@ MonoBehaviour:
     y: 0
     width: 619
     height: 312
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 25}
   m_Panes:
   - {fileID: 23}
@@ -299,7 +299,7 @@ MonoBehaviour:
   - {fileID: 25}
   - {fileID: 16}
   m_Selected: 2
-  m_LastSelected: 1
+  m_LastSelected: 3
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_MinSize: {x: 276, y: 292}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 143
+  controlID: 196
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -408,8 +408,8 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_MixersTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: -6744
+    m_SelectedIDs: dc420000
+    m_LastClickedID: 17116
     m_ExpandedIDs: 12eb343c
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -480,7 +480,7 @@ MonoBehaviour:
       splitSize: 6
       xOffset: 0
     m_HorizontalSplitter:
-      ID: 94
+      ID: 172
       splitterInitialOffset: 0
       currentActiveSplitter: -1
       realSizes: b9000000b0010000
@@ -519,7 +519,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1085
+    x: 1086
     y: 673
     width: 426
     height: 268
@@ -611,7 +611,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
+    x: 1
     y: 96
     width: 282
     height: 533
@@ -619,9 +619,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 58d7ffff
-      m_LastClickedID: -10408
-      m_ExpandedIDs: 40c2ffffc6d9ffff6eebffff1eefffff5efbffffc64900000e4a0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: ec56ffffbc64ffff9869ffff6c7affff8e7affff387cffff2e83fffffa8fffff1c90ffffc691ffff2af4ffff48f4ffff4ef4ffff54f4ffff6cf4ffff5efbfffff4ffffffb68a00004a8d0000548d0000769500008e950000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -666,7 +666,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 283
+    x: 284
     y: 96
     width: 800
     height: 533
@@ -681,9 +681,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 175.09561, y: 101.88571, z: -361.21973}
+    m_Target: {x: 6.555761, y: -2.306302, z: -3410.4104}
     speed: 2
-    m_Value: {x: 174.0259, y: 101.43189, z: -357.68896}
+    m_Value: {x: -0.342843, y: -0.0623471, z: -0.0808014}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -733,9 +733,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 180.32036
+    m_Target: 6.8816495
     speed: 2
-    m_Value: 163.72342
+    m_Value: 0.8092841
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -781,7 +781,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 283
+    x: 284
     y: 96
     width: 800
     height: 533
@@ -1241,10 +1241,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 95205edc918624c8ab2b50ad93bbe916,
+  m_AnimatorController: {fileID: 9100000, guid: a5d726e2db1cf46f3b3697f297540ef3,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 2950529335818808484, guid: 95205edc918624c8ab2b50ad93bbe916,
+  - m_Target: {fileID: 9180573901536208171, guid: a5d726e2db1cf46f3b3697f297540ef3,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -1279,7 +1279,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
+    x: 1
     y: 650
     width: 465
     height: 291
@@ -1297,21 +1297,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/Ultimate UI PixelArt Icons
+    - Assets/Prefabs/Props
   m_ViewMode: 1
   m_StartGridSize: 55
   m_LastFolders:
-  - Assets/Sprites/Ultimate UI PixelArt Icons
+  - Assets/Prefabs/Props
   m_LastFoldersGridSize: 55
   m_LastProjectPath: /Volumes/TOSHIBA EXT/Copia Seguridad/Otros/Pig Kingdom/KingomPigRepo/Pig-Kingdom/Pig
     Dungeon
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 293}
-    m_SelectedIDs: 5a460000
-    m_LastClickedID: 18010
-    m_ExpandedIDs: 000000004e4400005044000052440000544400008a44000000ca9a3b
+    scrollPos: {x: 0, y: 131.28796}
+    m_SelectedIDs: 98450000
+    m_LastClickedID: 17816
+    m_ExpandedIDs: 00000000ec420000ee420000f0420000f2420000f44200001643000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1339,7 +1339,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004e44000050440000524400005444000056440000
+    m_ExpandedIDs: 00000000ec420000ee420000f0420000f2420000f4420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1367,7 +1367,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000c43e0000c03e0000a23900009a3a0000fe350000864e0000403d000000000000c6450000844a0000b43a00000a3b00007e3b0000ee3e0000ead9ffffac4000008c400000124100005a3d00002c42000058420000fa4200007e3c0000aa430000c03c000064460000
+    m_ExpandedInstanceIDs: c6230000c43e0000c03e0000a23900009a3a0000fe350000864e0000403d000000000000c6450000844a0000b43a00000a3b00007e3b0000ee3e0000ead9ffffac4000008c400000124100005a3d00002c42000058420000fa4200007e3c0000aa430000c03c0000644600008e3d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1391,7 +1391,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 802.1385}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 55
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 122
@@ -1464,7 +1464,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 18878
+  m_LastSelectedObjectID: 45770
 --- !u!114 &25
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1486,7 +1486,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 466
+    x: 467
     y: 650
     width: 617
     height: 291
@@ -1512,7 +1512,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1085
+    x: 1086
     y: 96
     width: 426
     height: 556
