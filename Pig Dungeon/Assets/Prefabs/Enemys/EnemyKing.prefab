@@ -131,6 +131,7 @@ MonoBehaviour:
   - {fileID: 0}
   speed: 4
   detectRange: 0.66
+  startFigth: 0
   detectedPoint: {fileID: 6735951148510255992}
   detectRigth: {fileID: 3973194637508184309}
   detectLeft: {fileID: 5735470142621497898}
@@ -173,7 +174,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 4528382388787556690, guid: de5d96e6217ad464595fff9786464208,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

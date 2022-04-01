@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform LeftDetector;
     public Transform RigthDetector;
     public Vector2 sizeDetectors;
+    private Vector3 m_lastPos;
 
     public float attackRange = 0.5f;
     private int attackDamage = 10;
@@ -118,6 +119,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        if (b_die == true)
+        {
+            transform.position = m_lastPos;
+        }
         //Animations
         playerAnimator.SetFloat("Speed",Mathf.Abs(f_horizontalMove));
     }
@@ -240,6 +245,8 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator diePlayer()
     {
+        m_lastPos = transform.position; //Stay position
+
         //UI
         m_fadePlayer.DOFade(1, 2f).SetEase(Ease.InQuart);
 
