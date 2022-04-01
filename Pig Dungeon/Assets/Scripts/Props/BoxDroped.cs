@@ -9,7 +9,7 @@ public class BoxDroped : MonoBehaviour
     public GameObject[] pieces;
     public BoxCollider2D mycollider;
     public Transform boxTransform;
-    private Transform m_currentPosition;
+    private Vector3 m_currentPosition;
     private bool b_hited = false;
 
     // Start is called before the first frame update
@@ -23,15 +23,14 @@ public class BoxDroped : MonoBehaviour
     {
         if(b_hited == true)
         {
-            transform.position = m_currentPosition.position;
+            boxTransform.position = m_currentPosition;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Player");
-            m_currentPosition = transform;  // dont move position
+            m_currentPosition = transform.position;  // dont move position
             b_hited = true;
             mycollider.enabled = false;
 
@@ -40,8 +39,7 @@ public class BoxDroped : MonoBehaviour
         }
         if (collision.tag == "Background")
         {
-            Debug.Log("Background");
-            m_currentPosition = transform;  // dont move position
+            m_currentPosition = transform.position;  // dont move position
             b_hited = true;
             mycollider.enabled = false;
             StartCoroutine(Breack());

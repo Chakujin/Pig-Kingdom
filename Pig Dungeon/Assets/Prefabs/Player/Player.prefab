@@ -279,7 +279,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 24631
   m_GroundCheck: {fileID: 1180067777426957540}
   m_CeilingCheck: {fileID: 6312605569829605607}
   m_CrouchDisableCollider: {fileID: 2049739557251344022}
@@ -340,6 +340,7 @@ MonoBehaviour:
     m_Bits: 8192
   b_isRigth: 0
   b_isLeft: 0
+  b_die: 0
   currentHealth: 0
   maxHealth: 3
   diamondTotal: 0

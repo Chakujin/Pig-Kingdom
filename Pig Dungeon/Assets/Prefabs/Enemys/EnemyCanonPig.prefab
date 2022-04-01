@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 6549864956339092277}
   - component: {fileID: 1338077266844729071}
   - component: {fileID: 9030211899291516676}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: Canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
