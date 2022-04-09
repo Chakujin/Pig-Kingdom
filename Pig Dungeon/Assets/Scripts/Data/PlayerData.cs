@@ -9,6 +9,7 @@ public class PlayerData
     public int diamonds;
     public int level;
     public float volumeMain;
+    public bool gameStart;
 
     public PlayerData(GameManager manager)
     {
@@ -16,5 +17,6 @@ public class PlayerData
         heal = manager.playerHeal;
         level = manager.level;
         volumeMain = manager.MainVolume;
+        gameStart = manager.startGame;
     }
 }

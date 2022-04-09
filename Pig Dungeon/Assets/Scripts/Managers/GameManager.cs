@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int playerDiamond;
     public int level;
     public float MainVolume;
+    public bool startGame;
 
     private void Awake()
     {
@@ -39,5 +40,6 @@ public class GameManager : MonoBehaviour
         playerHeal = data.heal;
         playerDiamond = data.diamonds;
         MainVolume = data.volumeMain;
+        startGame = data.gameStart;
     }
 }
