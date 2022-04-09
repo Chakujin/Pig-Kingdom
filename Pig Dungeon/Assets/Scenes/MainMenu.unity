@@ -1187,16 +1187,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OptionMenu: {fileID: 569041735}
   MainButtons:
+  - {fileID: 1179244418}
   - {fileID: 772913368}
   - {fileID: 1999795772}
-  - {fileID: 1179244418}
   continueButton: {fileID: 1179244419}
   easing: 1
+  distanceMove: 1000
   m_StartPositionButtons: []
   m_PositionButtons:
+  - {fileID: 1695734860}
   - {fileID: 772913369}
   - {fileID: 1999795773}
-  - {fileID: 1695734860}
 --- !u!4 &454899109
 Transform:
   m_ObjectHideFlags: 0
@@ -1873,7 +1874,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.8584906, g: 0.81394625, b: 0.81394625, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -5605,7 +5606,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.85882354, g: 0.8156863, b: 0.8156863, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -7784,6 +7785,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Interactable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2511209924665701705, guid: 192fbc15f2c3b413abeca154944dbd39,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.85882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 2511209924665701705, guid: 192fbc15f2c3b413abeca154944dbd39,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.8156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 2511209924665701705, guid: 192fbc15f2c3b413abeca154944dbd39,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.8156863
       objectReference: {fileID: 0}
     - target: {fileID: 2511209924665701711, guid: 192fbc15f2c3b413abeca154944dbd39,
         type: 3}

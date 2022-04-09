@@ -54,7 +54,7 @@ MonoBehaviour:
   myAnimator: {fileID: 3485102722908172295}
   colliderPosition: {fileID: 836540942169788191}
   b_Start: 0
-  radiusRange: 0.6
+  radiusRange: 0.75
 --- !u!212 &228006158516606961
 SpriteRenderer:
   m_ObjectHideFlags: 0
