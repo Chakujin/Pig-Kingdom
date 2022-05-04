@@ -22,8 +22,12 @@ public class DoorScript : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            collision.GetComponent<PlayerMovement>().doorTrigger = true;
-            collision.GetComponent<PlayerMovement>().takeDoor(this);
+            PlayerMovement myplayer = collision.GetComponent<PlayerMovement>();
+
+            myplayer.doorTrigger = true;
+            myplayer.takeDoor(this);
+
+            myplayer.fButtonMove();
         }
     }
     //Exit door trigger
@@ -31,7 +35,10 @@ public class DoorScript : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<PlayerMovement>().doorTrigger = false;
+            PlayerMovement myplayer = collision.GetComponent<PlayerMovement>();
+            myplayer.doorTrigger = false;
+
+            myplayer.fButtonBye();            
         }
     }
 }

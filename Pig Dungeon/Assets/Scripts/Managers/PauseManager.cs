@@ -6,8 +6,17 @@ public class PauseManager : MonoBehaviour
 {
     public static bool gameispaused = false;
     public bool paused;
-    public GameObject pausemenuUI;
-    public GameObject ingameMenu;
+    private GameObject pausemenuUI;
+    private GameManager m_gameManager;
+    //public GameObject ingameMenu;
+
+    private void Awake()
+    {
+        pausemenuUI = GameObject.FindGameObjectWithTag("PauseCanvas");
+        m_gameManager = GameObject.FindGameObjectWithTag("gameManager").GetComponent<GameManager>();
+
+        pausemenuUI.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -27,17 +36,23 @@ public class PauseManager : MonoBehaviour
     public void Resume()
     {
         pausemenuUI.SetActive(false);
-        ingameMenu.SetActive(false);
+        //ingameMenu.SetActive(false);
         Cursor.visible = false;
         Time.timeScale = 1f;
+
         gameispaused = false;
+        m_gameManager.isPaused = false;
+
         paused = false;
     }
+
     public void Pause()
     {
         pausemenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameispaused = true;
+
+        m_gameManager.isPaused = true;
         paused = true;
     }
 }

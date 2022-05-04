@@ -61,7 +61,7 @@ public class HpBar : MonoBehaviour
 
     private IEnumerator quitHearts(int heal)
     {
-        Debug.Log("damage");
+        //Debug.Log("damage");
         animatorHearts[heal].SetTrigger("hit");
         yield return new WaitForSeconds(0.3f);
         hearts[heal].SetActive(false);

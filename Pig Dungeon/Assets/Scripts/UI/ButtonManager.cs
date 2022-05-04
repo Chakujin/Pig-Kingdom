@@ -15,6 +15,7 @@ public class ButtonManager : MonoBehaviour
     //Animations
     public Ease easing;
     public float distanceMove;
+    public float timeMove;
     [SerializeField] private List <Vector3> m_StartPositionButtons;
     public RectTransform[] m_PositionButtons;
 
@@ -85,7 +86,7 @@ public class ButtonManager : MonoBehaviour
         //Animate
         for (int i = 0; i < MainButtons.Length; i++)
         {
-            m_PositionButtons[i].DOAnchorPosX(m_StartPositionButtons[i].x, 1f).SetEase(easing);
+            m_PositionButtons[i].DOAnchorPosX(m_StartPositionButtons[i].x, timeMove).SetEase(easing);
             yield return new WaitForSeconds(0.5f);
         }
     }

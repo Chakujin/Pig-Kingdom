@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //Other
+    public bool isPaused = false;
+
     //Ingame
     public static GameManager inst;
     public int playerHeal;

@@ -1192,7 +1192,8 @@ MonoBehaviour:
   - {fileID: 1999795772}
   continueButton: {fileID: 1179244419}
   easing: 1
-  distanceMove: 1000
+  distanceMove: 3000
+  timeMove: 2
   m_StartPositionButtons: []
   m_PositionButtons:
   - {fileID: 1695734860}

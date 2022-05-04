@@ -10,6 +10,7 @@ TagManager:
   - diamondCount
   - gameManager
   - FadePlayer
+  - PauseCanvas
   layers:
   - Default
   - TransparentFX

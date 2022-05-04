@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
     private GameManager m_gameManager;
 
     //Door
+    public GameObject fButton;
     private DoorScript m_doorScript;
     public bool doorTrigger = false;
     private bool UsingDoor = false;
@@ -60,6 +61,8 @@ public class PlayerMovement : MonoBehaviour
         m_hpbar = GameObject.FindGameObjectWithTag("hpbar").GetComponent<HpBar>();
         m_diamondCount = GameObject.FindGameObjectWithTag("diamondCount").GetComponent<DiamondCount>();
         m_fadePlayer = GameObject.FindGameObjectWithTag("FadePlayer").GetComponent<Image>();
+
+        fButton.SetActive(false);
 
         m_hpbar.m_playermovement = this;
         currentHealth = m_gameManager.playerHeal;
@@ -99,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             //Door
-            if (doorTrigger == true && UsingDoor == false)
+            if (doorTrigger == true && UsingDoor == false && m_gameManager.isPaused == false)
             {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
@@ -224,6 +227,26 @@ public class PlayerMovement : MonoBehaviour
     public void OnCrouching(bool isCrouching)
     {
         playerAnimator.SetBool("IsCrouching", isCrouching);
+    }
+
+    //Buttons
+    public void fButtonMove()//Button f when trigger with the door
+    {
+        fButton.SetActive(true);
+        fButton.transform.DOScale(5,0.5f).SetEase(Ease.OutCubic);
+    }
+
+    public void fButtonBye()
+    {
+        StartCoroutine(fButtonBack());
+    }
+
+    private IEnumerator fButtonBack()
+    {
+        fButton.transform.DOScale(0, 0.5f).SetEase(Ease.InCubic);
+        yield return new WaitForSeconds(0.5f);
+        fButton.SetActive(false);
+
     }
 
     //Take door script to activate animator bools
