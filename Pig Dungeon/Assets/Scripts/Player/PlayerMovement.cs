@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
                 f_horizontalMove = Input.GetAxisRaw("Horizontal") * runspeed;
             }
 
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") && m_gameManager.isPaused == false)
             {
                 b_jump = true;
                 playerAnimator.SetBool("IsJumping", true);
@@ -108,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     StartCoroutine(OpenDoor());
                     UsingDoor = true;
+                    fButton.SetActive(false);
                 }
             }
 
