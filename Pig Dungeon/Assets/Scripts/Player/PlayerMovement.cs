@@ -89,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") && m_gameManager.isPaused == false)
             {
+                FindObjectOfType<AudioManager>().Play("Jump");
                 b_jump = true;
                 playerAnimator.SetBool("IsJumping", true);
             }
