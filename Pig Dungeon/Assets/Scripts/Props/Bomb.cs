@@ -58,7 +58,7 @@ public class Bomb : MonoBehaviour
 
     private IEnumerator StartExplosion()
     {
-        FindObjectOfType<AudioSource>().Play();
+        FindObjectOfType<AudioManager>().Play("Bomb");
 
         CameraPlayer.Instance.ShakeCamera(3f, 0.25f); // ShakeCam
         myAnimator.SetTrigger("boom");

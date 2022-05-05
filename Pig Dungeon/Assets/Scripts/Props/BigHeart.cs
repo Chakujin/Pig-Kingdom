@@ -34,7 +34,7 @@ public class BigHeart : MonoBehaviour
     private IEnumerator taked()
     {
         myAnimator.SetTrigger("take");
-        FindObjectOfType<AudioSource>().Play();
+        FindObjectOfType<AudioManager>().Play("Heart");
         yield return new WaitForSeconds(0.2f);
         Destroy(this.gameObject);
     }

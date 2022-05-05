@@ -51,10 +51,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-
-    }
 
     public void Play(string name)
     {

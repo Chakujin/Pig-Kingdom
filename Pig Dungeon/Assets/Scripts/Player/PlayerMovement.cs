@@ -175,6 +175,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (b_die == false)
         {
+            FindObjectOfType<AudioManager>().Play("Hit");
+
             currentHealth -= damage;
             m_hpbar.quitHeart();
             playerAnimator.SetTrigger("isHited");
@@ -271,6 +273,8 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator diePlayer()
     {
+        FindObjectOfType<AudioManager>().Play("GameOver");
+
         m_lastPos = transform.position; //Stay position
 
         //UI
