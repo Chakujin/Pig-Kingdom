@@ -258,6 +258,8 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator OpenDoor()
     {
+        m_doorScript.OpenAudio.Play();
+
         playerAnimator.SetBool("GoDoor",true);
         m_doorScript.myAnimator.SetBool("DoorOut",true);
         m_gameManager.level++;

@@ -58,6 +58,7 @@ public class BoxNormal : MonoBehaviour
 
     private IEnumerator breackBox()
     {
+        FindObjectOfType<AudioSource>().Play();
         myAnimation.SetTrigger("hit");
         yield return new WaitForSeconds(0.1f);
         box.SetActive(false);

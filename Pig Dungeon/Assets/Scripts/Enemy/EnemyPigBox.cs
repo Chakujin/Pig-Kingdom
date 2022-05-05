@@ -49,6 +49,8 @@ public class EnemyPigBox : MonoBehaviour
 
     private IEnumerator openBox()
     {
+        FindObjectOfType<AudioSource>().Play();
+
         boxAnimator.SetTrigger("Detected");
         yield return new WaitForSeconds(0.2f);
         box.SetActive(false);

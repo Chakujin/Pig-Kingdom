@@ -70,12 +70,15 @@ public class MainMenuManager : MonoBehaviour
     //Resolution Voids
     public void SetResolution(int resolutionIndex)
     {
+        FindObjectOfType<AudioSource>().Play();
+
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
     public void SetFullscreen(bool isFullscreen)
     {
+        FindObjectOfType<AudioSource>().Play();
         Screen.fullScreen = isFullscreen;
     }
 }

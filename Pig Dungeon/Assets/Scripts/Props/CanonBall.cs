@@ -10,6 +10,8 @@ public class CanonBall : MonoBehaviour
     private bool b_stay = false;
     private Vector3 v_lastpost;
 
+    public AudioSource myAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +47,8 @@ public class CanonBall : MonoBehaviour
 
     private IEnumerator Collision()
     {
+        //myAudio.Play();
+
         CameraPlayer.Instance.ShakeCamera(5f, 0.25f); // ShakeCam
         myCollider.enabled = false;
         yield return new WaitForSeconds(0.7f);

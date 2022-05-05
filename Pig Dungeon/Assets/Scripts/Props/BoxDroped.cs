@@ -48,6 +48,7 @@ public class BoxDroped : MonoBehaviour
 
     private IEnumerator Breack()
     {
+        FindObjectOfType<AudioSource>().Play();
         myAnimator.SetTrigger("hit");
         for (int i = 0; i < pieces.Length; i++)
         {
