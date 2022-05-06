@@ -157,6 +157,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Attack()
     {
+        FindObjectOfType<AudioManager>().Play("Attack");
+
         playerAnimator.SetTrigger("Attack");
         Collider2D[] hitEnemyes = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
         Collider2D[] hitBox = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, BoxLayer);
