@@ -27,6 +27,7 @@ public class EnemyClass : MonoBehaviour
     }
     public void Dead()
     {
+        FindObjectOfType<AudioManager>().Play("EnemyDie");
         EnemyAnimator.SetBool("IsDead", true);
         die = true;
         move = false;

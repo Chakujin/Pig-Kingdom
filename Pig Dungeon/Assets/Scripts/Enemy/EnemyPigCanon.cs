@@ -66,7 +66,7 @@ public class EnemyPigCanon : EnemyClass
         yield return new WaitForSeconds(0.5f);
         CanonAnimator.SetTrigger("Shoot");
 
-        FindObjectOfType<AudioSource>().Play();
+        FindObjectOfType<AudioManager>().Play("Canon");
 
         GameObject myCanonBall = Instantiate(canonBall,CanonBallSpawn); // Get instande and add Force
         myCanonBall.GetComponent<Rigidbody2D>().AddForce(v_force, ForceMode2D.Impulse);

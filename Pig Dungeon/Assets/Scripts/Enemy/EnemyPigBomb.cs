@@ -94,11 +94,13 @@ public class EnemyPigBomb : EnemyClass
         if (detectHitLeft == true)
         {
             GameObject mybomb = Instantiate(bomb, spawnBombInverted);
+            FindObjectOfType<AudioManager>().Play("BombDrop");
             mybomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(4, 0), ForceMode2D.Impulse);
         }
         else if (detectHitRigth == true)
         {
             GameObject mybomb = Instantiate(bomb, spawnBomb);
+            FindObjectOfType<AudioManager>().Play("BombDrop");
             mybomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-4, 0), ForceMode2D.Impulse);
         }
 

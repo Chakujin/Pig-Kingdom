@@ -206,7 +206,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (currentHealth >= maxHealth)
         {
-            Debug.Log("Max Heal");
+            //Debug.Log("Max Heal");
             currentHealth = maxHealth;
         }
         else

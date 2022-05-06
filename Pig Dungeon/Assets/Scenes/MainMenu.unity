@@ -4660,47 +4660,47 @@ PrefabInstance:
     - target: {fileID: 5687411405903066841, guid: 0f73dc58eda5f4d3e8500eb053f9d44c,
         type: 3}
       propertyPath: sounds.Array.size
-      value: 12
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5687411405903066841, guid: 0f73dc58eda5f4d3e8500eb053f9d44c,
         type: 3}
-      propertyPath: sounds.Array.data[11].name
-      value: Attack
+      propertyPath: sounds.Array.data[15].name
+      value: EnemyDie
       objectReference: {fileID: 0}
     - target: {fileID: 5687411405903066841, guid: 0f73dc58eda5f4d3e8500eb053f9d44c,
         type: 3}
-      propertyPath: sounds.Array.data[11].clip
+      propertyPath: sounds.Array.data[15].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 6d6ae4b4607014688a6c8db6997ba107, type: 3}
+      objectReference: {fileID: 8300000, guid: 268ee3c94460844eabd81b7fabc9db8d, type: 3}
     - target: {fileID: 5687411405903066841, guid: 0f73dc58eda5f4d3e8500eb053f9d44c,
         type: 3}
-      propertyPath: sounds.Array.data[11].audioMixer
+      propertyPath: sounds.Array.data[15].audioMixer
       value: 
       objectReference: {fileID: 24100000, guid: 53f07fd055e2a4594a06db53bb51d0b1,
         type: 2}
     - target: {fileID: 5687411405903066841, guid: 0f73dc58eda5f4d3e8500eb053f9d44c,
         type: 3}
-      propertyPath: sounds.Array.data[11].minPitch
+      propertyPath: sounds.Array.data[15].minPitch
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5687411405903066841, guid: 0f73dc58eda5f4d3e8500eb053f9d44c,
         type: 3}
-      propertyPath: sounds.Array.data[11].maxPitch
+      propertyPath: sounds.Array.data[15].maxPitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5687411405903066841, guid: 0f73dc58eda5f4d3e8500eb053f9d44c,
         type: 3}
-      propertyPath: sounds.Array.data[11].volume
+      propertyPath: sounds.Array.data[15].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5687411405903066841, guid: 0f73dc58eda5f4d3e8500eb053f9d44c,
         type: 3}
-      propertyPath: sounds.Array.data[11].pitch
+      propertyPath: sounds.Array.data[15].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5687411405903066841, guid: 0f73dc58eda5f4d3e8500eb053f9d44c,
         type: 3}
-      propertyPath: sounds.Array.data[11].outputMixer
+      propertyPath: sounds.Array.data[15].outputMixer
       value: Effects
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -89,12 +89,18 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
+    private void SoundButtonFinish()
+    {
+        FindObjectOfType<AudioManager>().Play("Bell");
+    }
+
     private IEnumerator AnimateButtons()
     {
         //Animate
         for (int i = 0; i < MainButtons.Length; i++)
         {
-            m_PositionButtons[i].DOAnchorPosX(m_StartPositionButtons[i].x, timeMove).SetEase(easing);
+            m_PositionButtons[i].DOAnchorPosX(m_StartPositionButtons[i].x, timeMove)
+                .SetEase(easing).OnComplete(SoundButtonFinish);
             yield return new WaitForSeconds(0.5f);
         }
     }
