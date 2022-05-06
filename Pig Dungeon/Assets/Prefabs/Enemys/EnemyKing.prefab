@@ -135,7 +135,7 @@ MonoBehaviour:
   detectedPoint: {fileID: 6735951148510255992}
   detectRigth: {fileID: 3973194637508184309}
   detectLeft: {fileID: 5735470142621497898}
-  sizeDetectors: {x: 6.63, y: 5.23}
+  sizeDetectors: {x: 6.63, y: 9.5}
 --- !u!212 &1384907047210808470
 SpriteRenderer:
   m_ObjectHideFlags: 0

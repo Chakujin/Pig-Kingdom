@@ -10,7 +10,6 @@ public class FinalBattle : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            Debug.Log("start");
             enemyKing.startFigth = true;
         }
     }

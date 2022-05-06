@@ -870,6 +870,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spot1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3081577156392780118, guid: 599e0dd4a268b432badb1c931710d96b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 599e0dd4a268b432badb1c931710d96b, type: 3}
 --- !u!1 &652500862 stripped

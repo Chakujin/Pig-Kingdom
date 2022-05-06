@@ -43,6 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4253b140ce24fbc8a4523495699890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHeal: 0
+  isPaused: 0
+  playerHeal: 3
   playerDiamond: 0
   level: 0
+  MainVolume: 1
+  startGame: 0

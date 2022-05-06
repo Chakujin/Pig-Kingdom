@@ -39,6 +39,16 @@ public class EnemyKing : EnemyClass
         m_positionMove = new Vector2(m_playerTransform.position.x, transform.position.y);
         if (die == false)
         {
+
+            if (detectHitRigth == true)
+            {
+                mySpriteRenderer.flipX = false;
+            }
+            else if (detectHitLeft == true)
+            {
+                mySpriteRenderer.flipX = true;
+            }
+
             if(startFigth == true)
             {
                 if (Vector2.Distance(transform.position, m_playerTransform.position) < 0.1 && b_startAttack == false) //In front of player
@@ -81,10 +91,15 @@ public class EnemyKing : EnemyClass
                 //Detect Player Rigth
                 foreach (Collider2D player in hitEnemyes)
                 {
-                    StartCoroutine(startAttack(player));
-                    b_startAttack = true;
-                    mySpriteRenderer.flipX = false;
-                    move = false;
+                    if(b_startAttack == false)
+                    {
+                        //Debug.Log("RigthHit");
+                        b_startAttack = true;
+                        StartCoroutine(startAttack(player));
+
+                        mySpriteRenderer.flipX = false;
+                        move = false;
+                    }
                 }
             }
 
@@ -96,10 +111,15 @@ public class EnemyKing : EnemyClass
                 //Detect Player Left
                 foreach (Collider2D player in hitEnemyes)
                 {
-                    StartCoroutine(startAttack(player));
-                    b_startAttack = true;
-                    mySpriteRenderer.flipX = true;
-                    move = false;
+                    if (b_startAttack == false)
+                    {
+                        //Debug.Log("LeftHit");
+                        b_startAttack = true;
+                        StartCoroutine(startAttack(player));
+
+                        mySpriteRenderer.flipX = true;
+                        move = false;
+                    }
                 }
             }
         }
@@ -115,6 +135,8 @@ public class EnemyKing : EnemyClass
 
     private IEnumerator startAttack(Collider2D playerDetected)
     {
+        //Debug.Log("King Attack ");
+
         EnemyAnimator.SetTrigger("Attack");
         EnemyAnimator.SetBool("Move", false);
         playerDetected.GetComponentInParent<PlayerMovement>().TakeDamage(1);
