@@ -20,6 +20,8 @@ public class EnemyClass : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        FindObjectOfType<AudioManager>().Play("HitEnemy");
+
         currentHealth -= damage;
         StartCoroutine(PigDamage());
     }

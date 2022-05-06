@@ -26,6 +26,7 @@ public class Sound
     public float maxDistance;
     */ 
     public bool loop;
+    public bool PlayOnAwake;
 
     [HideInInspector]
     public AudioSource source;

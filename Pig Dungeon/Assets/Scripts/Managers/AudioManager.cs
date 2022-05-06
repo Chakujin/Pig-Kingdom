@@ -40,6 +40,8 @@ public class AudioManager : MonoBehaviour
             s.source.outputAudioMixerGroup = s.audioMixer.FindMatchingGroups(s.outputMixer)[0];
             s.source.dopplerLevel = 0.5f;
             s.source.spread = 120f;
+            s.source.playOnAwake = s.PlayOnAwake;
+            
 
             //3D Sound
             /*

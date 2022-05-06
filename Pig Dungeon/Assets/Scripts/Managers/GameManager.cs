@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public int playerHeal;
     public int playerDiamond;
     public int level;
-    public float MainVolume;
+    public float MainVolume = 1f;
     public bool startGame;
 
     private void Awake()

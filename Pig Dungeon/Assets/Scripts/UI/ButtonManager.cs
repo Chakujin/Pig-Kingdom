@@ -49,7 +49,7 @@ public class ButtonManager : MonoBehaviour
     //Voids to call
     public void Contiune()
     {
-        FindObjectOfType<AudioSource>().Play();
+        FindObjectOfType<AudioManager>().Play("Button");
 
         m_gameManager.loadGame();
 
@@ -58,7 +58,7 @@ public class ButtonManager : MonoBehaviour
 
     public void NewGame()
     {
-        FindObjectOfType<AudioSource>().Play();
+        FindObjectOfType<AudioManager>().Play("Button");
 
         m_gameManager.level = 1;
         m_gameManager.startGame = true;
@@ -75,12 +75,12 @@ public class ButtonManager : MonoBehaviour
             buttons.SetActive(false);
         }
 
-        FindObjectOfType<AudioSource>().Play();
+        FindObjectOfType<AudioManager>().Play("Button");
     }
 
     public void BackOptions()
     {
-        FindObjectOfType<AudioSource>().Play();
+        FindObjectOfType<AudioManager>().Play("Button");
 
         OptionMenu.SetActive(false);
         foreach (GameObject buttons in MainButtons)

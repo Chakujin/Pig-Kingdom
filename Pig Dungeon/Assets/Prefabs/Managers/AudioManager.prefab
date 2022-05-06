@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1601127601854236908}
   - component: {fileID: 5687411405903066841}
+  - component: {fileID: 1387261223}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -53,6 +54,7 @@ MonoBehaviour:
     pitch: 1
     outputMixer: Effects
     loop: 0
+    PlayOnAwake: 0
     source: {fileID: 0}
   - name: Diamond
     clip: {fileID: 8300000, guid: 674e2d085f24e4623825110220337126, type: 3}
@@ -63,6 +65,7 @@ MonoBehaviour:
     pitch: 1
     outputMixer: Effects
     loop: 0
+    PlayOnAwake: 0
     source: {fileID: 0}
   - name: Heart
     clip: {fileID: 8300000, guid: bb06c98dae4de4da8b2e3916d1075c89, type: 3}
@@ -73,6 +76,7 @@ MonoBehaviour:
     pitch: 1
     outputMixer: Effects
     loop: 0
+    PlayOnAwake: 0
     source: {fileID: 0}
   - name: Bomb
     clip: {fileID: 8300000, guid: fb7c08e3a52a1480fa718a67b867ccdc, type: 3}
@@ -83,6 +87,7 @@ MonoBehaviour:
     pitch: 1
     outputMixer: Effects
     loop: 0
+    PlayOnAwake: 0
     source: {fileID: 0}
   - name: BoxBreack
     clip: {fileID: 8300000, guid: 53008937c935a44749904b032ef1369c, type: 3}
@@ -93,6 +98,7 @@ MonoBehaviour:
     pitch: 1
     outputMixer: Effects
     loop: 0
+    PlayOnAwake: 0
     source: {fileID: 0}
   - name: GameOver
     clip: {fileID: 8300000, guid: 293561c448e0a4a229b4707bd3fdf4c6, type: 3}
@@ -103,6 +109,7 @@ MonoBehaviour:
     pitch: 1
     outputMixer: Effects
     loop: 0
+    PlayOnAwake: 0
     source: {fileID: 0}
   - name: CanonBalll
     clip: {fileID: 8300000, guid: 51142f54dc5be4c779b6d42f3b3f813c, type: 3}
@@ -113,6 +120,7 @@ MonoBehaviour:
     pitch: 1
     outputMixer: Effects
     loop: 0
+    PlayOnAwake: 0
     source: {fileID: 0}
   - name: Hit
     clip: {fileID: 8300000, guid: 8f403d283bd7b4af79750ddb403a127f, type: 3}
@@ -123,4 +131,50 @@ MonoBehaviour:
     pitch: 1
     outputMixer: Effects
     loop: 0
+    PlayOnAwake: 0
     source: {fileID: 0}
+  - name: HitEnemy
+    clip: {fileID: 8300000, guid: c2a3b77b9c02d4aa5b8f5821f77576ac, type: 3}
+    audioMixer: {fileID: 24100000, guid: 53f07fd055e2a4594a06db53bb51d0b1, type: 2}
+    minPitch: 1
+    maxPitch: 1
+    volume: 1
+    pitch: 1
+    outputMixer: Effects
+    loop: 0
+    PlayOnAwake: 0
+    source: {fileID: 0}
+  - name: BGM
+    clip: {fileID: 8300000, guid: 1651284d0cc0a4c2fa95d21f922b213b, type: 3}
+    audioMixer: {fileID: 24100000, guid: 53f07fd055e2a4594a06db53bb51d0b1, type: 2}
+    minPitch: 0.9
+    maxPitch: 1
+    volume: 1
+    pitch: 1
+    outputMixer: Music
+    loop: 1
+    PlayOnAwake: 0
+    source: {fileID: 0}
+  - name: Button
+    clip: {fileID: 8300000, guid: e6bab98a1e21b4626aeec336ea17d4ea, type: 3}
+    audioMixer: {fileID: 24100000, guid: 53f07fd055e2a4594a06db53bb51d0b1, type: 2}
+    minPitch: 0.5
+    maxPitch: 1
+    volume: 1
+    pitch: 1
+    outputMixer: Effects
+    loop: 0
+    PlayOnAwake: 0
+    source: {fileID: 0}
+--- !u!114 &1387261223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4751977826269212027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff655c802e76c4961ac1b8396400de91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

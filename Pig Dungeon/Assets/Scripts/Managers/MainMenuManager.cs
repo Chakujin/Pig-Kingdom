@@ -58,12 +58,13 @@ public class MainMenuManager : MonoBehaviour
     public void SetVolume(float sliderValue)
     {
         //No va??
-        audioMixer.SetFloat("MainMixer", Mathf.Log10(sliderValue) * 20);
+        Debug.Log("Paso");
+        audioMixer.SetFloat("Master", Mathf.Log10(sliderValue) * 20);
         m_gameManager.MainVolume = sliderValue;
 
         if (sliderValue == 0)
         {
-            audioMixer.SetFloat("MainMixer", -60);
+            audioMixer.SetFloat("Master", -60);
         }
     }
 
