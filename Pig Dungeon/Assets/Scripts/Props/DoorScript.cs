@@ -7,12 +7,10 @@ public class DoorScript : MonoBehaviour
     public Animator myAnimator;
     public BoxCollider2D myColliderDoor;
     public bool spawnDoor;
-    public AudioSource OpenAudio;
+    public bool lastDoor;
 
     private void Awake()
     {
-        OpenAudio = FindObjectOfType<AudioSource>();
-
         if (spawnDoor == true)
         {
             myColliderDoor.enabled = false;

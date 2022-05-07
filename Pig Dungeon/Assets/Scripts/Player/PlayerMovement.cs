@@ -72,6 +72,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         transform.position = t_spawnPosition.position;
+
+        diamondTotal = m_gameManager.playerDiamond;
     }
 
     // Update is called once per frame
@@ -116,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
             //Attack
             if (Input.GetMouseButtonDown(0))
             {
-                if (f_currentTime >= F_timeAttack)
+                if (f_currentTime >= F_timeAttack && b_die == false)
                 {
                     f_currentTime = 0f;
                     Attack();
@@ -263,15 +265,23 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator OpenDoor()
     {
-        m_doorScript.OpenAudio.Play();
+        FindObjectOfType<AudioManager>().Play("OpenDoor");
 
         playerAnimator.SetBool("GoDoor",true);
         m_doorScript.myAnimator.SetBool("DoorOut",true);
         m_gameManager.level++;
 
         yield return new WaitForSeconds(3f);
+
         m_gameManager.saveGame();
-        SceneManager.LoadScene(m_gameManager.level);
+        if (m_doorScript.lastDoor == false)
+        {
+            SceneManager.LoadScene(m_gameManager.level);
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
     private IEnumerator diePlayer()

@@ -19,13 +19,17 @@ public class EnemyPigCanon : EnemyClass
     public Transform CanonBallSpawn;
     public GameObject canonBall;
     private Vector2 v_force;
-    
+
 
     // Start is called before the first frame update
+    private void OnBecameVisible()
+    {
+        StartCoroutine(StartDialog());
+    }
+
     void Start()
     {
         currentHealth += maxHealth;
-        StartCoroutine(StartDialog());
 
         //If is fliped add negative force when instantiate canon ball
         if (canonPig.transform.localScale.x == -1)

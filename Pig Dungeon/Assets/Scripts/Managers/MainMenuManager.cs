@@ -57,7 +57,6 @@ public class MainMenuManager : MonoBehaviour
     //Sound Voids
     public void SetVolume(float sliderValue)
     {
-        Debug.Log("Paso");
         audioMixer.SetFloat("Master", Mathf.Log10(sliderValue) * 20);
         m_gameManager.MainVolume = sliderValue;
 

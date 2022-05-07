@@ -19,10 +19,14 @@ public class EnemyPigBomb : EnemyClass
     private bool b_startAttack = false;
 
     // Start is called before the first frame update
+    private void OnBecameVisible()
+    {
+        StartCoroutine(StartDialog());
+    }
+
     void Start()
     {
         currentHealth += maxHealth;
-        StartCoroutine(StartDialog());
     }
 
     // Update is called once per frame

@@ -21,10 +21,15 @@ public class EnemyKing : EnemyClass
     [SerializeField] private Vector2 sizeDetectors;
 
     // Start is called before the first frame update
+    private void OnBecameVisible()
+    {
+        StartCoroutine(StartDialog());
+    }
+
     void Start()
     {
         currentHealth = maxHealth;
-        StartCoroutine(StartDialog());
+
         m_playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         foreach (GameObject platform in platformScape)
