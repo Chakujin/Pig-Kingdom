@@ -11,6 +11,7 @@ public class FinalBattle : MonoBehaviour
         if(collision.tag == "Player")
         {
             enemyKing.startFigth = true;
+            gameObject.SetActive(false);
         }
     }
 }

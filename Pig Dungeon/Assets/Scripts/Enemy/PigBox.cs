@@ -46,10 +46,13 @@ public class PigBox : EnemyClass
                 //Detect Player Rigth
                 foreach (Collider2D player in hitEnemyes)
                 {
-                    StartCoroutine(startAttack(player));
-                    b_startAttack = true;
-                    mySpriteRenderer.flipX = false;
-                    move = false;
+                    if (b_startAttack == false)
+                    {
+                        StartCoroutine(startAttack(player));
+                        b_startAttack = true;
+                        mySpriteRenderer.flipX = false;
+                        move = false;
+                    }
                 }
             }
 
@@ -60,10 +63,13 @@ public class PigBox : EnemyClass
                 //Detect Player Left
                 foreach (Collider2D player in hitEnemyes)
                 {
-                    StartCoroutine(startAttack(player));
-                    b_startAttack = true;
-                    mySpriteRenderer.flipX = true;
-                    move = false;
+                    if (b_startAttack == false)
+                    {
+                        StartCoroutine(startAttack(player));
+                        b_startAttack = true;
+                        mySpriteRenderer.flipX = true;
+                        move = false;
+                    }
                 }
             }
         }

@@ -7789,17 +7789,7 @@ PrefabInstance:
         type: 3}
       propertyPath: platformScape.Array.data[3]
       value: 
-      objectReference: {fileID: 1992305896}
-    - target: {fileID: 6235513920130843861, guid: ec31b6f35bcf44856a0c54cb3a2d17a1,
-        type: 3}
-      propertyPath: sizeDetectors.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6235513920130843861, guid: ec31b6f35bcf44856a0c54cb3a2d17a1,
-        type: 3}
-      propertyPath: maxHealth
-      value: 50
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 467120005}
     - target: {fileID: 8316081677604692237, guid: ec31b6f35bcf44856a0c54cb3a2d17a1,
         type: 3}
       propertyPath: m_LocalPosition.x
